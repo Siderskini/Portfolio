@@ -36,6 +36,16 @@ yarn-error.log*
 # vercel
 .vercel
 
+# cloned project repos
+/projects
+
+# cloud config (contains auth key paths — do not commit)
+cloud.json
+
+# deploy logs
+/logs
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.claude/settings.local.json
