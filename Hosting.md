@@ -198,6 +198,57 @@ Projects not listed in `cloud.json` are deployed locally as usual.
 
 ---
 
+## Hosting the Portfolio on Azure with HTTPS
+
+The portfolio itself can be cloud-deployed to an Azure VM with a trusted HTTPS certificate using an Azure DNS label and Caddy as a reverse proxy — no domain purchase required.
+
+### How It Works
+
+Azure assigns a free, stable DNS hostname to any public IP: `<label>.<region>.cloudapp.azure.com`. Caddy listens on ports 80/443, automatically obtains a Let's Encrypt certificate for that hostname, and reverse-proxies to the Next.js process on its internal port.
+
+### Step 1 — Add a `portfolio` entry to `cloud.json`
+
+```json
+"portfolio": {
+  "repoUrl": "https://github.com/Siderskini/Portfolio",
+  "type": "nextjs",
+  "port": 3000,
+  "provider": "azure",
+  "region": "westus2",
+  "authKey": "/path/to/azure-service-principal.json",
+  "dnsLabel": "sidd-portfolio"
+}
+```
+
+The resulting HTTPS URL will be `https://sidd-portfolio.westus2.cloudapp.azure.com`.
+
+### Step 2 — Make sure the repo is public
+
+The Azure VM clones the portfolio repo directly from GitHub. The repo must be publicly accessible.
+
+### Step 3 — Deploy
+
+```bash
+./deploy.sh --cloud cloud.json
+```
+
+The script will:
+1. Create the Azure resource group and VM (`portfolio-portfolio`) in westus2
+2. Assign the DNS label `sidd-portfolio` to its public IP
+3. Open ports 80 and 443 on the VM
+4. SSH in and run: `npm install && npm run build && npm start` on port 3000
+5. SSH in and install Caddy, write `/etc/caddy/Caddyfile` pointing to localhost:3000
+6. Caddy obtains a Let's Encrypt cert for `sidd-portfolio.westus2.cloudapp.azure.com` automatically
+
+### Notes
+
+- **DNS label uniqueness**: Azure DNS labels must be unique within a region across all Azure customers. `sidd-portfolio` is used here; if it's taken, choose a different label.
+- **Port 80 must be reachable**: Let's Encrypt's HTTP-01 challenge requires port 80 open. The deploy script opens it automatically.
+- **Refreshing**: `./deploy.sh --cloud cloud.json --refresh portfolio` SSHes in, runs `git pull`, rebuilds, and restarts Next.js. Caddy is not reinstalled.
+- **VM naming**: The Azure VM is named `portfolio-portfolio`. Re-running deploy never creates a duplicate — it reuses the existing VM.
+
+---
+
 ## Refreshing Individual Projects
 
 Pull the latest code and restart a single project without touching anything else:
@@ -235,6 +286,7 @@ VMs are named `portfolio-<id>` and looked up by that name on each deploy run, so
 
 | Project | AWS tag | Azure VM name | GCP instance name | OCI display name |
 |---|---|---|---|---|
+| Portfolio | — | `portfolio-portfolio` | — | — |
 | Flowers | `portfolio-flowers` | `portfolio-flowers` | `portfolio-flowers` | `portfolio-flowers` |
 | Labyrinth | `portfolio-labyrinth` | `portfolio-labyrinth` | `portfolio-labyrinth` | `portfolio-labyrinth` |
 | Fishing | `portfolio-fishing` | `portfolio-fishing` | `portfolio-fishing` | `portfolio-fishing` |

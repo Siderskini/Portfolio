@@ -1,4 +1,14 @@
 {
+  "portfolio": {
+    "repoUrl": "https://github.com/Siderskini/Portfolio",
+    "type": "nextjs",
+    "port": 3000,
+    "provider": "azure",
+    "region": "westus2",
+    "authKey": "/path/to/azure-service-principal.json",
+    "dnsLabel": "sidd-portfolio",
+    "vmSize": "Standard_DS1_v2"
+  },
   "flowers": {
     "repoUrl": "https://github.com/Siderskini/RubyOnRails/tree/main/Flowers",
     "type": "rails",

@@ -42,6 +42,11 @@ yarn-error.log*
 # cloud config (contains auth key paths — do not commit)
 cloud.json
 
+# Cloud credentials — do not commit
+azure-sp.json
+*.credentials
+aws-credentials.json
+
 # deploy logs
 /logs
 
