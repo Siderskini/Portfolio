@@ -128,7 +128,10 @@ This creates the VCN, an internet gateway, and a public subnet automatically.
 
 ### If the VCN exists but has no public subnet (create one)
 
-A public subnet requires an internet gateway and a route table that sends outbound traffic through it.
+A public subnet requires:
+- Public IP assignment allowed on the subnet (`prohibit-public-ip-on-vnic = false`)
+- A route table with a default route (`0.0.0.0/0`) to an Internet Gateway
+- Ingress rules (security list and/or NSG) for SSH/app/Caddy ports
 
 **1. Create an internet gateway** (skip if one already exists under the VCN):
 
@@ -138,7 +141,10 @@ A public subnet requires an internet gateway and a route table that sends outbou
 
 **2. Create a new route table for the public subnet:**
 
-OCI does not allow internet gateway routes in a route table already associated with a private subnet. Create a dedicated one instead of editing the default.
+You can either edit an existing route table or create a dedicated one for the public subnet.
+
+Important: edit the **subnet route table** under **VCN → Route Tables**.  
+Do **not** edit the Internet Gateway's optional ingress route table. That ingress table only allows **private IP** targets and is not where you set `0.0.0.0/0 -> Internet Gateway`.
 
 1. In the VCN, click **Route Tables → Create Route Table**
 2. Give it a name (e.g. `public-route-table`)
@@ -168,14 +174,20 @@ OCI does not allow internet gateway routes in a route table already associated w
 4. Copy the **OCID**
 
 > Use the **public** subnet — it has internet access via the internet gateway, which is required for the VM to be reachable and for Caddy to obtain a certificate.
+>
+> The deploy script now validates this and fails fast if the subnet is private or if no public IP is assigned.
 
 ---
 
-## Step 5 — Open Ports in the Security List (Manual Step Required)
+## Step 5 — Open Ports in Security Rules (Manual Step Required)
 
-**This must be done before deploying.** Unlike AWS, Azure, and GCP, OCI does not support adding individual ingress rules via the CLI without replacing the entire security list. The deploy script skips this step.
+**This must be done before deploying.** The deploy script does not modify your OCI firewall rules. You can configure these ports on the subnet security list, on an NSG, or both.
 
-You need to open **three ports**: 80 and 443 for Caddy (HTTPS + Let's Encrypt challenge), and the app port your project listens on.
+You need to open **four inbound ports** from `0.0.0.0/0`:
+- `22` for SSH
+- `80` for Let's Encrypt HTTP challenge
+- `443` for HTTPS via Caddy
+- your app port (e.g. `8080`)
 
 1. Go to **Networking → Virtual Cloud Networks → your VCN → Security Lists**
 2. Click on your security list (e.g. `Default Security List for...`)
@@ -183,6 +195,7 @@ You need to open **three ports**: 80 and 443 for Caddy (HTTPS + Let's Encrypt ch
 
    | Source CIDR | Protocol | Destination Port | Purpose |
    |---|---|---|---|
+   | `0.0.0.0/0` | TCP | `22` | SSH deploy access |
    | `0.0.0.0/0` | TCP | `80` | Caddy HTTP (Let's Encrypt challenge) |
    | `0.0.0.0/0` | TCP | `443` | Caddy HTTPS |
    | `0.0.0.0/0` | TCP | `8080` (or your app port) | App internal port |
@@ -190,6 +203,8 @@ You need to open **three ports**: 80 and 443 for Caddy (HTTPS + Let's Encrypt ch
 4. Click **Add Ingress Rules**
 
 Repeat the app port row for each additional project on a different port.
+
+Also ensure outbound access is allowed (default security lists usually allow all egress). The VM needs outbound internet for package install, git clone, and certificate issuance.
 
 ---
 
@@ -207,6 +222,8 @@ Save a file like `~/oci-credentials.json`:
 ```
 
 > **Security:** Keep this file outside the portfolio repo. It is already listed in `.gitignore`.
+>
+> `compartmentId` should be the compartment where the instance is created. For most setups, this should match the subnet's compartment.
 
 ---
 
@@ -239,7 +256,7 @@ Example entry for the Fishing game (Go/WASM, served by Python):
 |---|---|
 | `repoUrl` | GitHub repo URL. Use `/tree/branch/subdir` for a subdirectory. |
 | `type` | `rails`, `node`, `wasm`, or `nextjs` |
-| `port` | Internal port the app listens on (must be opened in security list first, along with 80 and 443) |
+| `port` | Internal port the app listens on (must be opened in security rules, along with 22, 80, and 443) |
 | `provider` | `oci` |
 | `region` | OCI region identifier (see below) |
 | `authKey` | Absolute or relative path to your `oci-credentials.json` |
@@ -268,15 +285,16 @@ Your Always Free instances must be in your **home region**.
 The script will:
 
 1. Read the OCI config file and profile from your `oci-credentials.json`
-2. Find the latest Ubuntu 22.04 image in your region
-3. Find the first availability domain in the region
-4. Launch a `VM.Standard.E2.1.Micro` instance named `portfolio-<id>` and wait for it to reach RUNNING state
-5. Wait ~20 seconds for the SSH daemon to start
-6. SSH in and run the project setup (installs Python/Node/Ruby, clones repo, starts app)
-7. Install Caddy and configure it for `https://<ip-with-dashes>.sslip.io`
-8. Write the HTTPS URL to `.env.local`
+2. Validate subnet/network prerequisites (public subnet setting, default route target, and common firewall ports)
+3. Find the latest Ubuntu 22.04 image in your region
+4. Find the first availability domain in the region
+5. Launch a `VM.Standard.E2.1.Micro` instance named `portfolio-<id>` (or reuse/start an existing stopped one)
+6. Wait for SSH readiness
+7. SSH in and run the project setup (installs Python/Node/Ruby, clones repo, starts app)
+8. Install Caddy and configure it for `https://<ip-with-dashes>.sslip.io`
+9. Write the HTTPS URL to `.env.local`
 
-**Re-running deploy never creates a duplicate instance** — instances are found by display name and `RUNNING` lifecycle state.
+**Re-running deploy never creates a duplicate instance** — instances are looked up by display name and reused if they are not terminated.
 
 ---
 
@@ -323,18 +341,38 @@ This SSHes in, runs `git pull`, and restarts the process. The instance is not re
 ## Troubleshooting
 
 **"App is unreachable after deploy" / Caddy certificate error**
-The most common cause on OCI. One or more ports are blocked by the security list (see Step 5). Make sure ports **80**, **443**, and the **app port** are all open. Open them in the OCI Console under **Networking → Virtual Cloud Networks → your VCN → Security Lists → Add Ingress Rules**.
+The most common cause on OCI. One or more ports are blocked by security rules (see Step 5). Make sure ports **22**, **80**, **443**, and the **app port** are all open from `0.0.0.0/0`.
 
 If ports are open but Caddy still fails, SSH into the VM and check: `sudo systemctl status caddy` and `sudo journalctl -u caddy -n 50`.
+
+**"OCI instance ... has no public IP"**
+Your subnet is likely private (`prohibit-public-ip-on-vnic=true`) or not configured for direct internet access. Use a public subnet and verify the route table has `0.0.0.0/0` to an Internet Gateway.
+
+**Route table warning during deploy**
+The script warns if the subnet route table has no default route to an Internet Gateway. In the OCI Console, open:
+**Networking → VCNs → your VCN → Route Tables** and confirm the subnet's route table includes:
+`Destination: 0.0.0.0/0`, `Target Type: Internet Gateway`.
+
+If OCI shows `Rules in the route table must use private IP as a target`, you're editing the wrong table (Internet Gateway ingress route table). Go back to the **subnet route table** instead.
+
+**Security list warning during deploy**
+The script checks subnet security lists for common inbound ports and warns when rules appear missing. If you intentionally use NSGs, ensure NSG rules allow the same ports.
 
 **"`compartmentId` or `subnetId` not found" error**
 Your `oci-credentials.json` is missing one of these fields. Check spelling — they are case-sensitive.
 
 **"Authorization failed or requested resource not found"**
-The API key was not uploaded to OCI, or the config file has wrong values. Verify with:
+The API key was not uploaded to OCI, or one of these values is wrong/mismatched: `compartmentId`, `subnetId`, `region`, or profile in `configFile`.
+
+Common OCI pitfall: `compartmentId` does not match the subnet's compartment and your user has rights in only one of them.
+
+Verify with:
 ```bash
 oci iam user get --user-id <your-user-ocid>
+oci network subnet get --subnet-id <your-subnet-ocid> --query 'data."compartment-id"' --raw-output
 ```
+
+If needed, update `oci-credentials.json` so `compartmentId` is the same compartment as the subnet.
 
 **SSH times out after instance launch**
 OCI instances can take 60–90 seconds after reaching `RUNNING` state before SSH is ready. The script waits 20 seconds — if that's not enough, wait another minute and run:

@@ -16,8 +16,8 @@ export async function GET(
 
   try {
     const content = readFileSync(logPath, "utf-8");
-    const lines = content.split("\n");
-    const tail = lines.slice(-100).join("\n");
+    const lines = content.split("\n").filter((l) => l.trim() !== "");
+    const tail = lines.slice(-10).join("\n");
     return new NextResponse(tail, { headers: { "Content-Type": "text/plain" } });
   } catch {
     return new NextResponse("Log file not found or empty.", {

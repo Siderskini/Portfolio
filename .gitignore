@@ -39,6 +39,9 @@ yarn-error.log*
 # cloned project repos
 /projects
 
+# local wasm source clones (used by object storage upload path)
+/.wasm_builds
+
 # cloud config (contains auth key paths — do not commit)
 cloud.json
 

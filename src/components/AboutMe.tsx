@@ -21,10 +21,14 @@ export default function AboutMe() {
             data integration pipelines; serialization frameworks; and distributed task dispatching systems.
           </p>
           <p>
-            I hold a patent for a Metadata-Driven Feature Store for Machine Learning Systems and carry a
-            Professional Scrum Master I certification. My background spans from nuclear engineering at
-            UC Berkeley to machine learning and full-stack development, giving me a unique perspective
-            on solving complex engineering challenges.
+            I am a listed 
+            <a href="https://ido3rinj0f2b.objectstorage.us-ashburn-1.oci.customer-oci.com/n/ido3rinj0f2b/b/bucket-portfolio/o/patent.pdf">&nbsp;patent&nbsp;</a> 
+            contributor for a 
+            <a href="https://c3.ai/blog/what-is-a-feature-store/">&nbsp;Metadata-Driven Feature Store for Machine Learning Systems&nbsp;</a> 
+            and carry a Professional Scrum Master I 
+            <a href="https://www.scrum.org/user/1171102">&nbsp;certification&nbsp;</a>
+            . My background spans from nuclear engineering at UC Berkeley to machine learning and full-stack development, 
+            giving me a unique perspective on solving complex engineering challenges.
           </p>
           <p>
             Today, I&apos;m focused on the frontier of agentic software development — building high quality software using agents.

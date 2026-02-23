@@ -27,7 +27,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     };
 
     fetch();
-    const interval = setInterval(fetch, 2000);
+    const interval = setInterval(fetch, 5000);
     return () => clearInterval(interval);
   }, [showOutput, project.id]);
 
@@ -62,12 +62,12 @@ export default function ProjectCard({ project }: { project: Project }) {
         >
           View on GitHub
         </a>
-        {project.iframeUrl && (
+        {project.iframeUrl && project.id !== "fishing" && (
           <button
             onClick={() => setShowOutput((v) => !v)}
             className="glass rounded-lg px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/15 transition-colors cursor-pointer"
           >
-            {showOutput ? "Hide Output" : "Show Output"}
+            {showOutput ? "Hide Output (5s refresh)" : "Show Output (5s refresh)"}
           </button>
         )}
       </div>
@@ -75,7 +75,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       {showOutput && (
         <pre
           ref={logRef}
-          className="mt-4 glass rounded-xl p-4 text-xs text-green-300/90 font-mono h-48 overflow-y-auto whitespace-pre-wrap break-all"
+          className="mt-4 glass rounded-xl p-4 text-xs text-green-300/90 font-mono overflow-y-auto whitespace-pre-wrap break-all"
         >
           {output || "Loading..."}
         </pre>

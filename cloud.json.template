@@ -25,20 +25,44 @@
     "region": "us-central1",
     "authKey": "/path/to/gcp-service-account.json"
   },
-  "fishing": {
+
+  "fishing-oci": {
     "repoUrl": "https://github.com/Siderskini/LearningGo/tree/main/fishing/web",
     "type": "wasm",
-    "port": 8080,
-    "provider": "azure",
-    "region": "eastus",
-    "authKey": "/path/to/azure-service-principal.json"
-  },
-  "fishing-oci-example": {
-    "repoUrl": "https://github.com/Siderskini/LearningGo/tree/main/fishing/web",
-    "type": "wasm",
-    "port": 8080,
     "provider": "oci",
     "region": "us-ashburn-1",
-    "authKey": "/path/to/oci-auth.json"
+    "authKey": "/path/to/oci-auth.json",
+    "bucket": "my-bucket-name"
+  },
+  "fishing-aws": {
+    "repoUrl": "https://github.com/Siderskini/LearningGo/tree/main/fishing/web",
+    "type": "wasm",
+    "provider": "aws",
+    "region": "us-east-1",
+    "authKey": "/path/to/aws-credentials.json",
+    "bucket": "globally-unique-bucket-name"
+  },
+  "fishing-gcp": {
+    "repoUrl": "https://github.com/Siderskini/LearningGo/tree/main/fishing/web",
+    "type": "wasm",
+    "provider": "gcp",
+    "region": "us-central1",
+    "authKey": "/path/to/gcp-service-account.json",
+    "bucket": "globally-unique-bucket-name"
+  },
+  "fishing-azure": {
+    "repoUrl": "https://github.com/Siderskini/LearningGo/tree/main/fishing/web",
+    "type": "wasm",
+    "provider": "azure",
+    "region": "eastus",
+    "authKey": "/path/to/azure-service-principal.json",
+    "bucket": "wasm",
+    "storageAccount": "globally-unique-account-name"
+  },
+
+  "_notes": {
+    "wasm-storage": "wasm projects default to object storage when 'bucket' is set. Use --vm flag to host on a VM instead.",
+    "wasm-azure-storageAccount": "Azure requires 'storageAccount' (storage account name, ≤24 chars, globally unique, lowercase) in addition to 'bucket' (container name).",
+    "wasm-port": "'port' is ignored for object storage wasm deployments (no VM is provisioned)."
   }
 }

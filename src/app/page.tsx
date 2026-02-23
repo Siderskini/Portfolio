@@ -4,6 +4,10 @@ import AboutMe from "@/components/AboutMe";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 
+// Force server-side rendering so process.env project URLs (written by deploy.sh
+// to .env.local) are read at request time rather than baked in at build time.
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <>
