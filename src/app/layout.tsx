@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sidd Viswanathan | Agentic Software Developer",
   description: "Portfolio of Sidd Viswanathan — Senior Software Engineer and Agentic Software Developer",
-  // Colours the iOS Safari status bar and Android browser chrome to match the theme.
+};
+
+// Colours the iOS Safari status bar and Android browser chrome to match the theme.
+export const viewport: Viewport = {
   themeColor: "#0f0c29",
 };
 
