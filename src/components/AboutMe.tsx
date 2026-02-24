@@ -26,7 +26,7 @@ export default function AboutMe() {
             contributor for a 
             <a href="https://c3.ai/blog/what-is-a-feature-store/">&nbsp;Metadata-Driven Feature Store for Machine Learning Systems&nbsp;</a> 
             and carry a Professional Scrum Master I 
-            <a href="https://www.scrum.org/user/1171102">&nbsp;certification&nbsp;</a>
+            <a href="https://www.scrum.org/user/1171102">&nbsp;certification</a>
             . My background spans from nuclear engineering at UC Berkeley to machine learning and full-stack development, 
             giving me a unique perspective on solving complex engineering challenges.
           </p>
