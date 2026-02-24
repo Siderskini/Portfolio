@@ -1,0 +1,2328 @@
+├─ @alloc/quick-lru@5.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/quick-lru
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@alloc/quick-lru
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@alloc/quick-lru/license
+├─ @babel/code-frame@7.29.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/code-frame
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/code-frame/LICENSE
+├─ @babel/compat-data@7.29.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/compat-data
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/compat-data/LICENSE
+├─ @babel/core@7.29.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/core
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/core/LICENSE
+├─ @babel/generator@7.29.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/generator
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/generator/LICENSE
+├─ @babel/helper-compilation-targets@7.28.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-compilation-targets
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-compilation-targets/LICENSE
+├─ @babel/helper-globals@7.28.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-globals
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-globals/LICENSE
+├─ @babel/helper-module-imports@7.28.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-module-imports
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-module-imports/LICENSE
+├─ @babel/helper-module-transforms@7.28.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-module-transforms
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-module-transforms/LICENSE
+├─ @babel/helper-string-parser@7.27.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-string-parser
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-string-parser/LICENSE
+├─ @babel/helper-validator-identifier@7.28.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-validator-identifier
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-validator-identifier/LICENSE
+├─ @babel/helper-validator-option@7.27.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-validator-option
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helper-validator-option/LICENSE
+├─ @babel/helpers@7.28.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helpers
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/helpers/LICENSE
+├─ @babel/parser@7.29.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/parser
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/parser/LICENSE
+├─ @babel/template@7.28.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/template
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/template/LICENSE
+├─ @babel/traverse@7.29.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/traverse
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/traverse/LICENSE
+├─ @babel/types@7.29.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/babel/babel
+│  ├─ publisher: The Babel Team
+│  ├─ url: https://babel.dev/team
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/types
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@babel/types/LICENSE
+├─ @emnapi/core@1.8.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/toyobayashi/emnapi
+│  ├─ publisher: toyobayashi
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@emnapi/core
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@emnapi/core/LICENSE
+├─ @emnapi/runtime@1.8.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/toyobayashi/emnapi
+│  ├─ publisher: toyobayashi
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@emnapi/runtime
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@emnapi/runtime/LICENSE
+├─ @emnapi/wasi-threads@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/toyobayashi/emnapi
+│  ├─ publisher: toyobayashi
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@emnapi/wasi-threads
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@emnapi/wasi-threads/LICENSE
+├─ @eslint-community/eslint-utils@4.9.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/eslint-community/eslint-utils
+│  ├─ publisher: Toru Nagashima
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint-community/eslint-utils
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint-community/eslint-utils/LICENSE
+├─ @eslint-community/regexpp@4.12.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/eslint-community/regexpp
+│  ├─ publisher: Toru Nagashima
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint-community/regexpp
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint-community/regexpp/LICENSE
+├─ @eslint/config-array@0.21.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/rewrite
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/config-array
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/config-array/LICENSE
+├─ @eslint/config-helpers@0.4.2
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/rewrite
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/config-helpers
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/config-helpers/LICENSE
+├─ @eslint/core@0.17.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/rewrite
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/core
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/core/LICENSE
+├─ @eslint/eslintrc@3.3.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/eslint/eslintrc
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/eslintrc
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/eslintrc/LICENSE
+├─ @eslint/js@9.39.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/eslint/eslint
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/js
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/js/LICENSE
+├─ @eslint/object-schema@2.1.7
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/rewrite
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/object-schema
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/object-schema/LICENSE
+├─ @eslint/plugin-kit@0.4.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/rewrite
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/plugin-kit
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@eslint/plugin-kit/LICENSE
+├─ @humanfs/core@0.19.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/humanwhocodes/humanfs
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@humanfs/core
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@humanfs/core/LICENSE
+├─ @humanfs/node@0.16.7
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/humanwhocodes/humanfs
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@humanfs/node
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@humanfs/node/LICENSE
+├─ @humanwhocodes/module-importer@1.0.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/humanwhocodes/module-importer
+│  ├─ publisher: Nicholas C. Zaks
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@humanwhocodes/module-importer
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@humanwhocodes/module-importer/LICENSE
+├─ @humanwhocodes/retry@0.4.3
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/humanwhocodes/retry
+│  ├─ publisher: Nicholas C. Zaks
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@humanwhocodes/retry
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@humanwhocodes/retry/LICENSE
+├─ @img/colour@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/lovell/colour
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@img/colour
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@img/colour/LICENSE.md
+├─ @img/sharp-libvips-linux-x64@1.2.4
+│  ├─ licenses: LGPL-3.0-or-later
+│  ├─ repository: https://github.com/lovell/sharp-libvips
+│  ├─ publisher: Lovell Fuller
+│  ├─ email: npm@lovell.info
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@img/sharp-libvips-linux-x64
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@img/sharp-libvips-linux-x64/README.md
+├─ @img/sharp-libvips-linuxmusl-x64@1.2.4
+│  ├─ licenses: LGPL-3.0-or-later
+│  ├─ repository: https://github.com/lovell/sharp-libvips
+│  ├─ publisher: Lovell Fuller
+│  ├─ email: npm@lovell.info
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@img/sharp-libvips-linuxmusl-x64
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@img/sharp-libvips-linuxmusl-x64/README.md
+├─ @img/sharp-linux-x64@0.34.5
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/lovell/sharp
+│  ├─ publisher: Lovell Fuller
+│  ├─ email: npm@lovell.info
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@img/sharp-linux-x64
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@img/sharp-linux-x64/LICENSE
+├─ @img/sharp-linuxmusl-x64@0.34.5
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/lovell/sharp
+│  ├─ publisher: Lovell Fuller
+│  ├─ email: npm@lovell.info
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@img/sharp-linuxmusl-x64
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@img/sharp-linuxmusl-x64/LICENSE
+├─ @jridgewell/gen-mapping@0.3.13
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/sourcemaps
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@jridgewell/gen-mapping
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@jridgewell/gen-mapping/LICENSE
+├─ @jridgewell/remapping@2.3.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/sourcemaps
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@jridgewell/remapping
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@jridgewell/remapping/LICENSE
+├─ @jridgewell/resolve-uri@3.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/resolve-uri
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@jridgewell/resolve-uri
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@jridgewell/resolve-uri/LICENSE
+├─ @jridgewell/sourcemap-codec@1.5.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/sourcemaps
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@jridgewell/sourcemap-codec
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@jridgewell/sourcemap-codec/LICENSE
+├─ @jridgewell/trace-mapping@0.3.31
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/sourcemaps
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@jridgewell/trace-mapping
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@jridgewell/trace-mapping/LICENSE
+├─ @napi-rs/wasm-runtime@0.2.12
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/napi-rs/napi-rs
+│  ├─ publisher: LongYinan
+│  ├─ url: https://github.com/Brooooooklyn
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@napi-rs/wasm-runtime
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@napi-rs/wasm-runtime/LICENSE
+├─ @next/env@16.1.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/vercel/next.js
+│  ├─ publisher: Next.js Team
+│  ├─ email: support@vercel.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@next/env
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@next/env/README.md
+├─ @next/eslint-plugin-next@16.1.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/vercel/next.js
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@next/eslint-plugin-next
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@next/eslint-plugin-next/README.md
+├─ @next/swc-linux-x64-gnu@16.1.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/vercel/next.js
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@next/swc-linux-x64-gnu
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@next/swc-linux-x64-gnu/README.md
+├─ @next/swc-linux-x64-musl@16.1.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/vercel/next.js
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@next/swc-linux-x64-musl
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@next/swc-linux-x64-musl/README.md
+├─ @nodelib/fs.scandir@2.1.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@nodelib/fs.scandir
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@nodelib/fs.scandir/LICENSE
+├─ @nodelib/fs.stat@2.0.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.stat
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@nodelib/fs.stat
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@nodelib/fs.stat/LICENSE
+├─ @nodelib/fs.walk@1.2.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.walk
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@nodelib/fs.walk
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@nodelib/fs.walk/LICENSE
+├─ @nolyfill/is-core-module@1.0.39
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/SukkaW/nolyfill
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@nolyfill/is-core-module
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@nolyfill/is-core-module/LICENSE
+├─ @rtsao/scc@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/rtsao/scc
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@rtsao/scc
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@rtsao/scc/LICENSE
+├─ @swc/helpers@0.5.15
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/swc-project/swc
+│  ├─ publisher: 강동윤
+│  ├─ email: kdy1997.dev@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@swc/helpers
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@swc/helpers/LICENSE
+├─ @tailwindcss/node@4.1.18
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@tailwindcss/node
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@tailwindcss/node/LICENSE
+├─ @tailwindcss/oxide-linux-x64-gnu@4.1.18
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@tailwindcss/oxide-linux-x64-gnu
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@tailwindcss/oxide-linux-x64-gnu/LICENSE
+├─ @tailwindcss/oxide-linux-x64-musl@4.1.18
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@tailwindcss/oxide-linux-x64-musl
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@tailwindcss/oxide-linux-x64-musl/LICENSE
+├─ @tailwindcss/oxide@4.1.18
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@tailwindcss/oxide
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@tailwindcss/oxide/LICENSE
+├─ @tailwindcss/postcss@4.1.18
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@tailwindcss/postcss
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@tailwindcss/postcss/LICENSE
+├─ @tybys/wasm-util@0.10.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/toyobayashi/wasm-util
+│  ├─ publisher: toyobayashi
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@tybys/wasm-util
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@tybys/wasm-util/README.md
+├─ @types/estree@1.0.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@types/estree
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@types/estree/LICENSE
+├─ @types/json-schema@7.0.15
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@types/json-schema
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@types/json-schema/LICENSE
+├─ @types/json5@0.0.29
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ publisher: Jason Swearingen
+│  ├─ email: https://jasonswearingen.github.io
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@types/json5
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@types/json5/README.md
+├─ @types/node@20.19.33
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@types/node
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@types/node/LICENSE
+├─ @types/react-dom@19.2.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@types/react-dom
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@types/react-dom/LICENSE
+├─ @types/react@19.2.14
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@types/react
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@types/react/LICENSE
+├─ @typescript-eslint/eslint-plugin@8.56.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/typescript-eslint/typescript-eslint
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/eslint-plugin
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/eslint-plugin/LICENSE
+├─ @typescript-eslint/parser@8.56.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/typescript-eslint/typescript-eslint
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/parser
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/parser/LICENSE
+├─ @typescript-eslint/project-service@8.56.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/typescript-eslint/typescript-eslint
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/project-service
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/project-service/LICENSE
+├─ @typescript-eslint/scope-manager@8.56.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/typescript-eslint/typescript-eslint
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/scope-manager
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/scope-manager/LICENSE
+├─ @typescript-eslint/tsconfig-utils@8.56.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/typescript-eslint/typescript-eslint
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/tsconfig-utils
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/tsconfig-utils/LICENSE
+├─ @typescript-eslint/type-utils@8.56.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/typescript-eslint/typescript-eslint
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/type-utils
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/type-utils/LICENSE
+├─ @typescript-eslint/types@8.56.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/typescript-eslint/typescript-eslint
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/types
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/types/LICENSE
+├─ @typescript-eslint/typescript-estree@8.56.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/typescript-eslint/typescript-eslint
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/typescript-estree
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/typescript-estree/LICENSE
+├─ @typescript-eslint/utils@8.56.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/typescript-eslint/typescript-eslint
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/utils
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/utils/LICENSE
+├─ @typescript-eslint/visitor-keys@8.56.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/typescript-eslint/typescript-eslint
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/visitor-keys
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@typescript-eslint/visitor-keys/LICENSE
+├─ @unrs/resolver-binding-linux-x64-gnu@1.11.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/unrs/unrs-resolver
+│  ├─ publisher: JounQin
+│  ├─ email: admin@1stg.me
+│  ├─ url: https://www.1stG.me
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@unrs/resolver-binding-linux-x64-gnu
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@unrs/resolver-binding-linux-x64-gnu/README.md
+├─ @unrs/resolver-binding-linux-x64-musl@1.11.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/unrs/unrs-resolver
+│  ├─ publisher: JounQin
+│  ├─ email: admin@1stg.me
+│  ├─ url: https://www.1stG.me
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/@unrs/resolver-binding-linux-x64-musl
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/@unrs/resolver-binding-linux-x64-musl/README.md
+├─ acorn-jsx@5.3.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/acornjs/acorn-jsx
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/acorn-jsx
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/acorn-jsx/LICENSE
+├─ acorn@8.15.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/acornjs/acorn
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/acorn
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/acorn/LICENSE
+├─ ajv@6.12.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ajv-validator/ajv
+│  ├─ publisher: Evgeny Poberezkin
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/ajv
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/ajv/LICENSE
+├─ ansi-styles@4.3.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chalk/ansi-styles
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/ansi-styles
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/ansi-styles/license
+├─ argparse@2.0.1
+│  ├─ licenses: Python-2.0
+│  ├─ repository: https://github.com/nodeca/argparse
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/argparse
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/argparse/LICENSE
+├─ aria-query@5.3.2
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/A11yance/aria-query
+│  ├─ publisher: Jesse Beach
+│  ├─ email: splendidnoise@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/aria-query
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/aria-query/LICENSE
+├─ array-buffer-byte-length@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/array-buffer-byte-length
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/array-buffer-byte-length
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/array-buffer-byte-length/LICENSE
+├─ array-includes@3.1.9
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/array-includes
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/array-includes
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/array-includes/LICENSE
+├─ array.prototype.findlast@1.2.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/Array.prototype.findLast
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/array.prototype.findlast
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/array.prototype.findlast/LICENSE
+├─ array.prototype.findlastindex@1.2.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/Array.prototype.findLastIndex
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/array.prototype.findlastindex
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/array.prototype.findlastindex/LICENSE
+├─ array.prototype.flat@1.3.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/Array.prototype.flat
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/array.prototype.flat
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/array.prototype.flat/LICENSE
+├─ array.prototype.flatmap@1.3.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/Array.prototype.flatMap
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/array.prototype.flatmap
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/array.prototype.flatmap/LICENSE
+├─ array.prototype.tosorted@1.1.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/Array.prototype.toSorted
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/array.prototype.tosorted
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/array.prototype.tosorted/LICENSE
+├─ arraybuffer.prototype.slice@1.0.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/ArrayBuffer.prototype.slice
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/arraybuffer.prototype.slice
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/arraybuffer.prototype.slice/LICENSE
+├─ ast-types-flow@0.0.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/kyldvs/ast-types-flow
+│  ├─ publisher: kyldvs
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/ast-types-flow
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/ast-types-flow/LICENSE
+├─ async-function@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/async-function
+│  ├─ publisher: Jordan Harbamd
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/async-function
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/async-function/LICENSE
+├─ available-typed-arrays@1.0.7
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/available-typed-arrays
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/available-typed-arrays
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/available-typed-arrays/LICENSE
+├─ axe-core@4.11.1
+│  ├─ licenses: MPL-2.0
+│  ├─ repository: https://github.com/dequelabs/axe-core
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/axe-core
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/axe-core/LICENSE
+├─ axobject-query@4.1.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/A11yance/axobject-query
+│  ├─ publisher: Jesse Beach
+│  ├─ email: splendidnoise@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/axobject-query
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/axobject-query/LICENSE
+├─ balanced-match@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/juliangruber/balanced-match
+│  ├─ publisher: Julian Gruber
+│  ├─ email: mail@juliangruber.com
+│  ├─ url: http://juliangruber.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/balanced-match
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/balanced-match/LICENSE.md
+├─ baseline-browser-mapping@2.9.19
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/web-platform-dx/baseline-browser-mapping
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/baseline-browser-mapping
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/baseline-browser-mapping/LICENSE.txt
+├─ brace-expansion@1.1.12
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/juliangruber/brace-expansion
+│  ├─ publisher: Julian Gruber
+│  ├─ email: mail@juliangruber.com
+│  ├─ url: http://juliangruber.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/brace-expansion
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/brace-expansion/LICENSE
+├─ braces@3.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/micromatch/braces
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/braces
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/braces/LICENSE
+├─ browserslist@4.28.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/browserslist/browserslist
+│  ├─ publisher: Andrey Sitnik
+│  ├─ email: andrey@sitnik.ru
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/browserslist
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/browserslist/LICENSE
+├─ call-bind-apply-helpers@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/call-bind-apply-helpers
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/call-bind-apply-helpers
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/call-bind-apply-helpers/LICENSE
+├─ call-bind@1.0.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/call-bind
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/call-bind
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/call-bind/LICENSE
+├─ call-bound@1.0.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/call-bound
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/call-bound
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/call-bound/LICENSE
+├─ callsites@3.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/callsites
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/callsites
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/callsites/license
+├─ caniuse-lite@1.0.30001770
+│  ├─ licenses: CC-BY-4.0
+│  ├─ repository: https://github.com/browserslist/caniuse-lite
+│  ├─ publisher: Ben Briggs
+│  ├─ email: beneb.info@gmail.com
+│  ├─ url: http://beneb.info
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/caniuse-lite
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/caniuse-lite/LICENSE
+├─ chalk@4.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chalk/chalk
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/chalk
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/chalk/license
+├─ client-only@0.0.1
+│  ├─ licenses: MIT
+│  └─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/client-only
+├─ color-convert@2.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Qix-/color-convert
+│  ├─ publisher: Heather Arthur
+│  ├─ email: fayearthur@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/color-convert
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/color-convert/LICENSE
+├─ color-name@1.1.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/colorjs/color-name
+│  ├─ publisher: DY
+│  ├─ email: dfcreative@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/color-name
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/color-name/LICENSE
+├─ concat-map@0.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/substack/node-concat-map
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/concat-map
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/concat-map/LICENSE
+├─ convert-source-map@2.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/thlorenz/convert-source-map
+│  ├─ publisher: Thorsten Lorenz
+│  ├─ email: thlorenz@gmx.de
+│  ├─ url: http://thlorenz.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/convert-source-map
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/convert-source-map/LICENSE
+├─ cross-spawn@7.0.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/moxystudio/node-cross-spawn
+│  ├─ publisher: André Cruz
+│  ├─ email: andre@moxy.studio
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/cross-spawn
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/cross-spawn/LICENSE
+├─ csstype@3.2.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/frenic/csstype
+│  ├─ publisher: Fredrik Nicol
+│  ├─ email: fredrik.nicol@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/csstype
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/csstype/LICENSE
+├─ damerau-levenshtein@1.0.8
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/tad-lispy/node-damerau-levenshtein
+│  ├─ publisher: The Spanish Inquisition
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/damerau-levenshtein
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/damerau-levenshtein/LICENSE
+├─ data-view-buffer@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/data-view-buffer
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/data-view-buffer
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/data-view-buffer/LICENSE
+├─ data-view-byte-length@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/data-view-byte-length
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/data-view-byte-length
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/data-view-byte-length/LICENSE
+├─ data-view-byte-offset@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/data-view-byte-offset
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/data-view-byte-offset
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/data-view-byte-offset/LICENSE
+├─ debug@4.4.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/debug-js/debug
+│  ├─ publisher: Josh Junon
+│  ├─ url: https://github.com/qix-
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/debug
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/debug/LICENSE
+├─ deep-is@0.1.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/thlorenz/deep-is
+│  ├─ publisher: Thorsten Lorenz
+│  ├─ email: thlorenz@gmx.de
+│  ├─ url: http://thlorenz.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/deep-is
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/deep-is/LICENSE
+├─ define-data-property@1.1.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/define-data-property
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/define-data-property
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/define-data-property/LICENSE
+├─ define-properties@1.2.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/define-properties
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/define-properties
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/define-properties/LICENSE
+├─ detect-libc@2.1.2
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/lovell/detect-libc
+│  ├─ publisher: Lovell Fuller
+│  ├─ email: npm@lovell.info
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/detect-libc
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/detect-libc/LICENSE
+├─ doctrine@2.1.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/doctrine
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/doctrine
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/doctrine/LICENSE
+├─ dunder-proto@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/dunder-proto
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/dunder-proto
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/dunder-proto/LICENSE
+├─ electron-to-chromium@1.5.286
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/kilian/electron-to-chromium
+│  ├─ publisher: Kilian Valkhof
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/electron-to-chromium
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/electron-to-chromium/LICENSE
+├─ emoji-regex@9.2.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mathiasbynens/emoji-regex
+│  ├─ publisher: Mathias Bynens
+│  ├─ url: https://mathiasbynens.be/
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/emoji-regex
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/emoji-regex/LICENSE-MIT.txt
+├─ enhanced-resolve@5.19.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/webpack/enhanced-resolve
+│  ├─ publisher: Tobias Koppers @sokra
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/enhanced-resolve
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/enhanced-resolve/LICENSE
+├─ es-abstract@1.24.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/es-abstract
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-abstract
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-abstract/LICENSE
+├─ es-define-property@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/es-define-property
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-define-property
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-define-property/LICENSE
+├─ es-errors@1.3.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/es-errors
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-errors
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-errors/LICENSE
+├─ es-iterator-helpers@1.2.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/iterator-helpers
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-iterator-helpers
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-iterator-helpers/LICENSE
+├─ es-object-atoms@1.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/es-object-atoms
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-object-atoms
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-object-atoms/LICENSE
+├─ es-set-tostringtag@2.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/es-set-tostringtag
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-set-tostringtag
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-set-tostringtag/LICENSE
+├─ es-shim-unscopables@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/es-shim-unscopables
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-shim-unscopables
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-shim-unscopables/LICENSE
+├─ es-to-primitive@1.3.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/es-to-primitive
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-to-primitive
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/es-to-primitive/LICENSE
+├─ escalade@3.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/lukeed/escalade
+│  ├─ publisher: Luke Edwards
+│  ├─ email: luke.edwards05@gmail.com
+│  ├─ url: https://lukeed.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/escalade
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/escalade/license
+├─ escape-string-regexp@4.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/escape-string-regexp
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/escape-string-regexp
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/escape-string-regexp/license
+├─ eslint-config-next@16.1.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/vercel/next.js
+│  └─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-config-next
+├─ eslint-import-resolver-node@0.3.9
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/import-js/eslint-plugin-import
+│  ├─ publisher: Ben Mosher
+│  ├─ url: me@benmosher.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-import-resolver-node
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-import-resolver-node/LICENSE
+├─ eslint-import-resolver-typescript@3.10.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/import-js/eslint-import-resolver-typescript
+│  ├─ publisher: Alex Gorbatchev
+│  ├─ email: alex.gorbatchev@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-import-resolver-typescript
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-import-resolver-typescript/LICENSE
+├─ eslint-module-utils@2.12.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/import-js/eslint-plugin-import
+│  ├─ publisher: Ben Mosher
+│  ├─ email: me@benmosher.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-module-utils
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-module-utils/LICENSE
+├─ eslint-plugin-import@2.32.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/import-js/eslint-plugin-import
+│  ├─ publisher: Ben Mosher
+│  ├─ email: me@benmosher.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-plugin-import
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-plugin-import/LICENSE
+├─ eslint-plugin-jsx-a11y@6.10.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y
+│  ├─ publisher: Ethan Cohen
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-plugin-jsx-a11y
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-plugin-jsx-a11y/LICENSE.md
+├─ eslint-plugin-react-hooks@7.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/react
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-plugin-react-hooks
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-plugin-react-hooks/LICENSE
+├─ eslint-plugin-react@7.37.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jsx-eslint/eslint-plugin-react
+│  ├─ publisher: Yannick Croissant
+│  ├─ email: yannick.croissant+npm@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-plugin-react
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-plugin-react/LICENSE
+├─ eslint-scope@8.4.0
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/eslint/js
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-scope
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-scope/LICENSE
+├─ eslint-visitor-keys@4.2.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/eslint/js
+│  ├─ publisher: Toru Nagashima
+│  ├─ url: https://github.com/mysticatea
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-visitor-keys
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint-visitor-keys/LICENSE
+├─ eslint@9.39.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/eslint/eslint
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ email: nicholas+npm@nczconsulting.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/eslint/LICENSE
+├─ espree@10.4.0
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/eslint/js
+│  ├─ publisher: Nicholas C. Zakas
+│  ├─ email: nicholas+npm@nczconsulting.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/espree
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/espree/LICENSE
+├─ esquery@1.7.0
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/estools/esquery
+│  ├─ publisher: Joel Feenstra
+│  ├─ email: jrfeenst+esquery@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/esquery
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/esquery/license.txt
+├─ esrecurse@4.3.0
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/estools/esrecurse
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/esrecurse
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/esrecurse/README.md
+├─ estraverse@5.3.0
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/estools/estraverse
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/estraverse
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/estraverse/LICENSE.BSD
+├─ esutils@2.0.3
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/estools/esutils
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/esutils
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/esutils/LICENSE.BSD
+├─ fast-deep-equal@3.1.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/epoberezkin/fast-deep-equal
+│  ├─ publisher: Evgeny Poberezkin
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/fast-deep-equal
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/fast-deep-equal/LICENSE
+├─ fast-glob@3.3.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mrmlnc/fast-glob
+│  ├─ publisher: Denis Malinochkin
+│  ├─ url: https://mrmlnc.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/fast-glob
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/fast-glob/LICENSE
+├─ fast-json-stable-stringify@2.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/epoberezkin/fast-json-stable-stringify
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/fast-json-stable-stringify
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/fast-json-stable-stringify/LICENSE
+├─ fast-levenshtein@2.0.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/hiddentao/fast-levenshtein
+│  ├─ publisher: Ramesh Nair
+│  ├─ email: ram@hiddentao.com
+│  ├─ url: http://www.hiddentao.com/
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/fast-levenshtein
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/fast-levenshtein/LICENSE.md
+├─ fastq@1.20.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/mcollina/fastq
+│  ├─ publisher: Matteo Collina
+│  ├─ email: hello@matteocollina.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/fastq
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/fastq/LICENSE
+├─ file-entry-cache@8.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jaredwray/file-entry-cache
+│  ├─ publisher: Jared Wray
+│  ├─ url: https://jaredwray.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/file-entry-cache
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/file-entry-cache/LICENSE
+├─ fill-range@7.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jonschlinkert/fill-range
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/fill-range
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/fill-range/LICENSE
+├─ find-up@5.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/find-up
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/find-up
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/find-up/license
+├─ flat-cache@4.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jaredwray/flat-cache
+│  ├─ publisher: Jared Wray
+│  ├─ url: https://jaredwray.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/flat-cache
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/flat-cache/LICENSE
+├─ flatted@3.3.3
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/WebReflection/flatted
+│  ├─ publisher: Andrea Giammarchi
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/flatted
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/flatted/LICENSE
+├─ for-each@0.3.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Raynos/for-each
+│  ├─ publisher: Raynos
+│  ├─ email: raynos2@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/for-each
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/for-each/LICENSE
+├─ function-bind@1.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Raynos/function-bind
+│  ├─ publisher: Raynos
+│  ├─ email: raynos2@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/function-bind
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/function-bind/LICENSE
+├─ function.prototype.name@1.1.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/Function.prototype.name
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/function.prototype.name
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/function.prototype.name/LICENSE
+├─ functions-have-names@1.2.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/functions-have-names
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/functions-have-names
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/functions-have-names/LICENSE
+├─ generator-function@2.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/TimothyGu/generator-function
+│  ├─ publisher: Jordan Harbamd
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/generator-function
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/generator-function/LICENSE.md
+├─ gensync@1.0.0-beta.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/loganfsmyth/gensync
+│  ├─ publisher: Logan Smyth
+│  ├─ email: loganfsmyth@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/gensync
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/gensync/LICENSE
+├─ get-intrinsic@1.3.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/get-intrinsic
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/get-intrinsic
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/get-intrinsic/LICENSE
+├─ get-proto@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/get-proto
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/get-proto
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/get-proto/LICENSE
+├─ get-symbol-description@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/get-symbol-description
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/get-symbol-description
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/get-symbol-description/LICENSE
+├─ get-tsconfig@4.13.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/privatenumber/get-tsconfig
+│  ├─ publisher: Hiroki Osame
+│  ├─ email: hiroki.osame@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/get-tsconfig
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/get-tsconfig/LICENSE
+├─ glob-parent@6.0.2
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/gulpjs/glob-parent
+│  ├─ publisher: Gulp Team
+│  ├─ email: team@gulpjs.com
+│  ├─ url: https://gulpjs.com/
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/glob-parent
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/glob-parent/LICENSE
+├─ globals@14.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/globals
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/globals
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/globals/license
+├─ globalthis@1.0.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/System.global
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/globalthis
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/globalthis/LICENSE
+├─ gopd@1.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/gopd
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/gopd
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/gopd/LICENSE
+├─ graceful-fs@4.2.11
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/node-graceful-fs
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/graceful-fs
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/graceful-fs/LICENSE
+├─ has-bigints@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/has-bigints
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/has-bigints
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/has-bigints/LICENSE
+├─ has-flag@4.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/has-flag
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/has-flag
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/has-flag/license
+├─ has-property-descriptors@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/has-property-descriptors
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/has-property-descriptors
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/has-property-descriptors/LICENSE
+├─ has-proto@1.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/has-proto
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/has-proto
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/has-proto/LICENSE
+├─ has-symbols@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/has-symbols
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/has-symbols
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/has-symbols/LICENSE
+├─ has-tostringtag@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/has-tostringtag
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/has-tostringtag
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/has-tostringtag/LICENSE
+├─ hasown@2.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/hasOwn
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/hasown
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/hasown/LICENSE
+├─ hermes-estree@0.25.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/hermes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/hermes-estree
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/hermes-estree/LICENSE
+├─ hermes-parser@0.25.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/hermes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/hermes-parser
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/hermes-parser/LICENSE
+├─ ignore@5.3.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/kaelzhang/node-ignore
+│  ├─ publisher: kael
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/ignore
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/ignore/LICENSE-MIT
+├─ import-fresh@3.3.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/import-fresh
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/import-fresh
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/import-fresh/license
+├─ imurmurhash@0.1.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jensyt/imurmurhash-js
+│  ├─ publisher: Jens Taylor
+│  ├─ email: jensyt@gmail.com
+│  ├─ url: https://github.com/homebrewing
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/imurmurhash
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/imurmurhash/README.md
+├─ internal-slot@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/internal-slot
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/internal-slot
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/internal-slot/LICENSE
+├─ is-array-buffer@3.0.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-array-buffer
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-array-buffer
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-array-buffer/LICENSE
+├─ is-async-function@2.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-async-function
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-async-function
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-async-function/LICENSE
+├─ is-bigint@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-bigint
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-bigint
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-bigint/LICENSE
+├─ is-boolean-object@1.2.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-boolean-object
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-boolean-object
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-boolean-object/LICENSE
+├─ is-bun-module@2.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/SunsetTechuila/is-bun-module
+│  ├─ publisher: SunsetTechuila
+│  ├─ email: techuila.sunset@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-bun-module
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-bun-module/LICENSE
+├─ is-callable@1.2.7
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-callable
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-callable
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-callable/LICENSE
+├─ is-core-module@2.16.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-core-module
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-core-module
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-core-module/LICENSE
+├─ is-data-view@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-data-view
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-data-view
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-data-view/LICENSE
+├─ is-date-object@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-date-object
+│  ├─ publisher: Jordan Harband
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-date-object
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-date-object/LICENSE
+├─ is-extglob@2.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jonschlinkert/is-extglob
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-extglob
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-extglob/LICENSE
+├─ is-finalizationregistry@1.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-finalizationregistry
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-finalizationregistry
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-finalizationregistry/LICENSE
+├─ is-generator-function@1.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-generator-function
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-generator-function
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-generator-function/LICENSE
+├─ is-glob@4.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/micromatch/is-glob
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-glob
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-glob/LICENSE
+├─ is-map@2.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-map
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-map
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-map/LICENSE
+├─ is-negative-zero@2.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-negative-zero
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-negative-zero
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-negative-zero/LICENSE
+├─ is-number-object@1.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-number-object
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-number-object
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-number-object/LICENSE
+├─ is-number@7.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jonschlinkert/is-number
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-number
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-number/LICENSE
+├─ is-regex@1.2.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-regex
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-regex
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-regex/LICENSE
+├─ is-set@2.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-set
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-set
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-set/LICENSE
+├─ is-shared-array-buffer@1.0.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-shared-array-buffer
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-shared-array-buffer
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-shared-array-buffer/LICENSE
+├─ is-string@1.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-string
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-string
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-string/LICENSE
+├─ is-symbol@1.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-symbol
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-symbol
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-symbol/LICENSE
+├─ is-typed-array@1.1.15
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-typed-array
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-typed-array
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-typed-array/LICENSE
+├─ is-weakmap@2.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-weakmap
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-weakmap
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-weakmap/LICENSE
+├─ is-weakref@1.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-weakref
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-weakref
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-weakref/LICENSE
+├─ is-weakset@2.0.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/is-weakset
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-weakset
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/is-weakset/LICENSE
+├─ isarray@2.0.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/juliangruber/isarray
+│  ├─ publisher: Julian Gruber
+│  ├─ email: mail@juliangruber.com
+│  ├─ url: http://juliangruber.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/isarray
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/isarray/LICENSE
+├─ isexe@2.0.0
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/isexe
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/isexe
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/isexe/LICENSE
+├─ iterator.prototype@1.1.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/Iterator.prototype
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/iterator.prototype
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/iterator.prototype/LICENSE
+├─ jiti@2.6.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/unjs/jiti
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/jiti
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/jiti/LICENSE
+├─ js-tokens@4.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/lydell/js-tokens
+│  ├─ publisher: Simon Lydell
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/js-tokens
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/js-tokens/LICENSE
+├─ js-yaml@4.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/nodeca/js-yaml
+│  ├─ publisher: Vladimir Zapparov
+│  ├─ email: dervus.grim@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/js-yaml
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/js-yaml/LICENSE
+├─ jsesc@3.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mathiasbynens/jsesc
+│  ├─ publisher: Mathias Bynens
+│  ├─ url: https://mathiasbynens.be/
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/jsesc
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/jsesc/LICENSE-MIT.txt
+├─ json-buffer@3.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/dominictarr/json-buffer
+│  ├─ publisher: Dominic Tarr
+│  ├─ email: dominic.tarr@gmail.com
+│  ├─ url: http://dominictarr.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/json-buffer
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/json-buffer/LICENSE
+├─ json-schema-traverse@0.4.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/epoberezkin/json-schema-traverse
+│  ├─ publisher: Evgeny Poberezkin
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/json-schema-traverse
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/json-schema-traverse/LICENSE
+├─ json-stable-stringify-without-jsonify@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/samn/json-stable-stringify
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/json-stable-stringify-without-jsonify
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/json-stable-stringify-without-jsonify/LICENSE
+├─ json5@2.2.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/json5/json5
+│  ├─ publisher: Aseem Kishore
+│  ├─ email: aseem.kishore@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/json5
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/json5/LICENSE.md
+├─ jsx-ast-utils@3.3.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jsx-eslint/jsx-ast-utils
+│  ├─ publisher: Ethan Cohen
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/jsx-ast-utils
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/jsx-ast-utils/LICENSE.md
+├─ keyv@4.5.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jaredwray/keyv
+│  ├─ publisher: Jared Wray
+│  ├─ email: me@jaredwray.com
+│  ├─ url: http://jaredwray.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/keyv
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/keyv/README.md
+├─ language-subtag-registry@0.3.23
+│  ├─ licenses: CC0-1.0
+│  ├─ repository: https://github.com/mattcg/language-subtag-registry
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/language-subtag-registry
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/language-subtag-registry/README.md
+├─ language-tags@1.0.9
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mattcg/language-tags
+│  ├─ publisher: Matthew Caruana Galizia
+│  ├─ email: mattcg@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/language-tags
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/language-tags/README.md
+├─ levn@0.4.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/gkz/levn
+│  ├─ publisher: George Zahariev
+│  ├─ email: z@georgezahariev.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/levn
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/levn/LICENSE
+├─ lightningcss-linux-x64-gnu@1.30.2
+│  ├─ licenses: MPL-2.0
+│  ├─ repository: https://github.com/parcel-bundler/lightningcss
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/lightningcss-linux-x64-gnu
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/lightningcss-linux-x64-gnu/LICENSE
+├─ lightningcss-linux-x64-musl@1.30.2
+│  ├─ licenses: MPL-2.0
+│  ├─ repository: https://github.com/parcel-bundler/lightningcss
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/lightningcss-linux-x64-musl
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/lightningcss-linux-x64-musl/LICENSE
+├─ lightningcss@1.30.2
+│  ├─ licenses: MPL-2.0
+│  ├─ repository: https://github.com/parcel-bundler/lightningcss
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/lightningcss
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/lightningcss/LICENSE
+├─ locate-path@6.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/locate-path
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/locate-path
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/locate-path/license
+├─ lodash.merge@4.6.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/lodash/lodash
+│  ├─ publisher: John-David Dalton
+│  ├─ email: john.david.dalton@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/lodash.merge
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/lodash.merge/LICENSE
+├─ loose-envify@1.4.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/zertosh/loose-envify
+│  ├─ publisher: Andres Suarez
+│  ├─ email: zertosh@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/loose-envify
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/loose-envify/LICENSE
+├─ lru-cache@5.1.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/node-lru-cache
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/lru-cache
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/lru-cache/LICENSE
+├─ magic-string@0.30.21
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Rich-Harris/magic-string
+│  ├─ publisher: Rich Harris
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/magic-string
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/magic-string/LICENSE
+├─ math-intrinsics@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/math-intrinsics
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/math-intrinsics
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/math-intrinsics/LICENSE
+├─ merge2@1.4.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/teambition/merge2
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/merge2
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/merge2/LICENSE
+├─ micromatch@4.0.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/micromatch/micromatch
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/micromatch
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/micromatch/LICENSE
+├─ minimatch@3.1.2
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/minimatch
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/minimatch
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/minimatch/LICENSE
+├─ minimist@1.2.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/minimistjs/minimist
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/minimist
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/minimist/LICENSE
+├─ ms@2.1.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/vercel/ms
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/ms
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/ms/license.md
+├─ nanoid@3.3.11
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ai/nanoid
+│  ├─ publisher: Andrey Sitnik
+│  ├─ email: andrey@sitnik.ru
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/nanoid
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/nanoid/LICENSE
+├─ napi-postinstall@0.3.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/un-ts/napi-postinstall
+│  ├─ publisher: JounQin
+│  ├─ email: admin@1stg.me
+│  ├─ url: https://www.1stG.me
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/napi-postinstall
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/napi-postinstall/LICENSE
+├─ natural-compare@1.4.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/litejs/natural-compare-lite
+│  ├─ publisher: Lauri Rooden
+│  ├─ url: https://github.com/litejs/natural-compare-lite
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/natural-compare
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/natural-compare/README.md
+├─ next@16.1.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/vercel/next.js
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/next
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/next/license.md
+├─ node-exports-info@1.6.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/node-exports-info
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/node-exports-info
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/node-exports-info/LICENSE
+├─ node-releases@2.0.27
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chicoxyzzy/node-releases
+│  ├─ publisher: Sergey Rubanov
+│  ├─ email: chi187@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/node-releases
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/node-releases/LICENSE
+├─ object-assign@4.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/object-assign
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/object-assign
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/object-assign/license
+├─ object-inspect@1.13.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/object-inspect
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/object-inspect
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/object-inspect/LICENSE
+├─ object-keys@1.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/object-keys
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/object-keys
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/object-keys/LICENSE
+├─ object.assign@4.1.7
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/object.assign
+│  ├─ publisher: Jordan Harband
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/object.assign
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/object.assign/LICENSE
+├─ object.entries@1.1.9
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/Object.entries
+│  ├─ publisher: Jordan Harband
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/object.entries
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/object.entries/LICENSE
+├─ object.fromentries@2.0.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/Object.fromEntries
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/object.fromentries
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/object.fromentries/LICENSE
+├─ object.groupby@1.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/Object.groupBy
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/object.groupby
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/object.groupby/LICENSE
+├─ object.values@1.2.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/Object.values
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/object.values
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/object.values/LICENSE
+├─ optionator@0.9.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/gkz/optionator
+│  ├─ publisher: George Zahariev
+│  ├─ email: z@georgezahariev.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/optionator
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/optionator/LICENSE
+├─ own-keys@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/own-keys
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/own-keys
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/own-keys/LICENSE
+├─ p-limit@3.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/p-limit
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/p-limit
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/p-limit/license
+├─ p-locate@5.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/p-locate
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/p-locate
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/p-locate/license
+├─ parent-module@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/parent-module
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/parent-module
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/parent-module/license
+├─ path-exists@4.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/path-exists
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/path-exists
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/path-exists/license
+├─ path-key@3.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/path-key
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/path-key
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/path-key/license
+├─ path-parse@1.0.7
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jbgutierrez/path-parse
+│  ├─ publisher: Javier Blanco
+│  ├─ email: http://jbgutierrez.info
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/path-parse
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/path-parse/LICENSE
+├─ picocolors@1.1.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/alexeyraspopov/picocolors
+│  ├─ publisher: Alexey Raspopov
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/picocolors
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/picocolors/LICENSE
+├─ picomatch@2.3.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/micromatch/picomatch
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/picomatch
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/picomatch/LICENSE
+├─ portfolio@0.1.0
+│  ├─ licenses: UNLICENSED
+│  ├─ private: true
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/LICENSE
+├─ possible-typed-array-names@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/possible-typed-array-names
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/possible-typed-array-names
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/possible-typed-array-names/LICENSE
+├─ postcss@8.5.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/postcss/postcss
+│  ├─ publisher: Andrey Sitnik
+│  ├─ email: andrey@sitnik.ru
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/postcss
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/postcss/LICENSE
+├─ prelude-ls@1.2.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/gkz/prelude-ls
+│  ├─ publisher: George Zahariev
+│  ├─ email: z@georgezahariev.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/prelude-ls
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/prelude-ls/LICENSE
+├─ prop-types@15.8.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/prop-types
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/prop-types
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/prop-types/LICENSE
+├─ punycode@2.3.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mathiasbynens/punycode.js
+│  ├─ publisher: Mathias Bynens
+│  ├─ url: https://mathiasbynens.be/
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/punycode
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/punycode/LICENSE-MIT.txt
+├─ queue-microtask@1.2.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/feross/queue-microtask
+│  ├─ publisher: Feross Aboukhadijeh
+│  ├─ email: feross@feross.org
+│  ├─ url: https://feross.org
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/queue-microtask
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/queue-microtask/LICENSE
+├─ react-dom@19.2.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/react
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/react-dom
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/react-dom/LICENSE
+├─ react-is@16.13.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/react
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/react-is
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/react-is/LICENSE
+├─ react@19.2.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/react
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/react
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/react/LICENSE
+├─ reflect.getprototypeof@1.0.10
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/Reflect.getPrototypeOf
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/reflect.getprototypeof
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/reflect.getprototypeof/LICENSE
+├─ regexp.prototype.flags@1.5.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/RegExp.prototype.flags
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/regexp.prototype.flags
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/regexp.prototype.flags/LICENSE
+├─ resolve-from@4.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/resolve-from
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/resolve-from
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/resolve-from/license
+├─ resolve-pkg-maps@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/privatenumber/resolve-pkg-maps
+│  ├─ publisher: Hiroki Osame
+│  ├─ email: hiroki.osame@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/resolve-pkg-maps
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/resolve-pkg-maps/LICENSE
+├─ resolve@1.22.11
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/browserify/resolve
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/resolve
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/resolve/LICENSE
+├─ reusify@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mcollina/reusify
+│  ├─ publisher: Matteo Collina
+│  ├─ email: hello@matteocollina.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/reusify
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/reusify/LICENSE
+├─ run-parallel@1.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/feross/run-parallel
+│  ├─ publisher: Feross Aboukhadijeh
+│  ├─ email: feross@feross.org
+│  ├─ url: https://feross.org
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/run-parallel
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/run-parallel/LICENSE
+├─ safe-array-concat@1.1.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/safe-array-concat
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/safe-array-concat
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/safe-array-concat/LICENSE
+├─ safe-push-apply@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/safe-push-apply
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/safe-push-apply
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/safe-push-apply/LICENSE
+├─ safe-regex-test@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/safe-regex-test
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/safe-regex-test
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/safe-regex-test/LICENSE
+├─ scheduler@0.27.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/react
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/scheduler
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/scheduler/LICENSE
+├─ semver@6.3.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/npm/node-semver
+│  ├─ publisher: GitHub Inc.
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/semver
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/semver/LICENSE
+├─ set-function-length@1.2.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/set-function-length
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/set-function-length
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/set-function-length/LICENSE
+├─ set-function-name@2.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/set-function-name
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/set-function-name
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/set-function-name/LICENSE
+├─ set-proto@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/set-proto
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/set-proto
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/set-proto/LICENSE
+├─ sharp@0.34.5
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/lovell/sharp
+│  ├─ publisher: Lovell Fuller
+│  ├─ email: npm@lovell.info
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/sharp
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/sharp/LICENSE
+├─ shebang-command@2.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/kevva/shebang-command
+│  ├─ publisher: Kevin Mårtensson
+│  ├─ email: kevinmartensson@gmail.com
+│  ├─ url: github.com/kevva
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/shebang-command
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/shebang-command/license
+├─ shebang-regex@3.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/shebang-regex
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/shebang-regex
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/shebang-regex/license
+├─ side-channel-list@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/side-channel-list
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/side-channel-list
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/side-channel-list/LICENSE
+├─ side-channel-map@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/side-channel-map
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/side-channel-map
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/side-channel-map/LICENSE
+├─ side-channel-weakmap@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/side-channel-weakmap
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/side-channel-weakmap
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/side-channel-weakmap/LICENSE
+├─ side-channel@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/side-channel
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/side-channel
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/side-channel/LICENSE
+├─ source-map-js@1.2.1
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/7rulnik/source-map-js
+│  ├─ publisher: Valentin 7rulnik Semirulnik
+│  ├─ email: v7rulnik@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/source-map-js
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/source-map-js/LICENSE
+├─ stable-hash@0.0.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/shuding/stable-hash
+│  ├─ publisher: Shu Ding
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/stable-hash
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/stable-hash/README.md
+├─ stop-iteration-iterator@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/stop-iteration-iterator
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/stop-iteration-iterator
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/stop-iteration-iterator/LICENSE
+├─ string.prototype.includes@2.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mathiasbynens/String.prototype.includes
+│  ├─ publisher: Mathias Bynens
+│  ├─ url: https://mathiasbynens.be/
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/string.prototype.includes
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/string.prototype.includes/LICENSE
+├─ string.prototype.matchall@4.0.12
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/String.prototype.matchAll
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/string.prototype.matchall
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/string.prototype.matchall/LICENSE
+├─ string.prototype.repeat@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mathiasbynens/String.prototype.repeat
+│  ├─ publisher: Mathias Bynens
+│  ├─ url: https://mathiasbynens.be/
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/string.prototype.repeat
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/string.prototype.repeat/LICENSE-MIT.txt
+├─ string.prototype.trim@1.2.10
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/String.prototype.trim
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/string.prototype.trim
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/string.prototype.trim/LICENSE
+├─ string.prototype.trimend@1.0.9
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/String.prototype.trimEnd
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/string.prototype.trimend
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/string.prototype.trimend/LICENSE
+├─ string.prototype.trimstart@1.0.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/es-shims/String.prototype.trimStart
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/string.prototype.trimstart
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/string.prototype.trimstart/LICENSE
+├─ strip-bom@3.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/strip-bom
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/strip-bom
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/strip-bom/license
+├─ strip-json-comments@3.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/strip-json-comments
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/strip-json-comments
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/strip-json-comments/license
+├─ styled-jsx@5.1.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/vercel/styled-jsx
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/styled-jsx
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/styled-jsx/license.md
+├─ supports-color@7.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chalk/supports-color
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/supports-color
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/supports-color/license
+├─ supports-preserve-symlinks-flag@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/node-supports-preserve-symlinks-flag
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/supports-preserve-symlinks-flag
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/supports-preserve-symlinks-flag/LICENSE
+├─ tailwindcss@4.1.18
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/tailwindcss
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/tailwindcss/LICENSE
+├─ tapable@2.3.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/webpack/tapable
+│  ├─ publisher: Tobias Koppers @sokra
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/tapable
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/tapable/LICENSE
+├─ tinyglobby@0.2.15
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/SuperchupuDev/tinyglobby
+│  ├─ publisher: Superchupu
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/tinyglobby
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/tinyglobby/LICENSE
+├─ to-regex-range@5.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/micromatch/to-regex-range
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/to-regex-range
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/to-regex-range/LICENSE
+├─ ts-api-utils@2.4.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/JoshuaKGoldberg/ts-api-utils
+│  ├─ publisher: JoshuaKGoldberg
+│  ├─ email: npm@joshuakgoldberg.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/ts-api-utils
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/ts-api-utils/LICENSE.md
+├─ tsconfig-paths@3.15.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/dividab/tsconfig-paths
+│  ├─ publisher: Jonas Kello
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/tsconfig-paths
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/tsconfig-paths/LICENSE
+├─ tslib@2.8.1
+│  ├─ licenses: 0BSD
+│  ├─ repository: https://github.com/Microsoft/tslib
+│  ├─ publisher: Microsoft Corp.
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/tslib
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/tslib/LICENSE.txt
+├─ type-check@0.4.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/gkz/type-check
+│  ├─ publisher: George Zahariev
+│  ├─ email: z@georgezahariev.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/type-check
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/type-check/LICENSE
+├─ typed-array-buffer@1.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/typed-array-buffer
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/typed-array-buffer
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/typed-array-buffer/LICENSE
+├─ typed-array-byte-length@1.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/typed-array-byte-length
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/typed-array-byte-length
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/typed-array-byte-length/LICENSE
+├─ typed-array-byte-offset@1.0.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/typed-array-byte-offset
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/typed-array-byte-offset
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/typed-array-byte-offset/LICENSE
+├─ typed-array-length@1.0.7
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/typed-array-length
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/typed-array-length
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/typed-array-length/LICENSE
+├─ typescript-eslint@8.56.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/typescript-eslint/typescript-eslint
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/typescript-eslint
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/typescript-eslint/LICENSE
+├─ typescript@5.9.3
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/microsoft/TypeScript
+│  ├─ publisher: Microsoft Corp.
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/typescript
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/typescript/LICENSE.txt
+├─ unbox-primitive@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ljharb/unbox-primitive
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/unbox-primitive
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/unbox-primitive/LICENSE
+├─ undici-types@6.21.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/nodejs/undici
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/undici-types
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/undici-types/LICENSE
+├─ unrs-resolver@1.11.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/unrs/unrs-resolver
+│  ├─ publisher: JounQin
+│  ├─ email: admin@1stg.me
+│  ├─ url: https://www.1stG.me
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/unrs-resolver
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/unrs-resolver/README.md
+├─ update-browserslist-db@1.2.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/browserslist/update-db
+│  ├─ publisher: Andrey Sitnik
+│  ├─ email: andrey@sitnik.ru
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/update-browserslist-db
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/update-browserslist-db/LICENSE
+├─ uri-js@4.4.1
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/garycourt/uri-js
+│  ├─ publisher: Gary Court
+│  ├─ email: gary.court@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/uri-js
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/uri-js/LICENSE
+├─ which-boxed-primitive@1.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/which-boxed-primitive
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/which-boxed-primitive
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/which-boxed-primitive/LICENSE
+├─ which-builtin-type@1.2.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/which-builtin-type
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/which-builtin-type
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/which-builtin-type/LICENSE
+├─ which-collection@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/which-collection
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/which-collection
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/which-collection/LICENSE
+├─ which-typed-array@1.1.20
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/inspect-js/which-typed-array
+│  ├─ publisher: Jordan Harband
+│  ├─ email: ljharb@gmail.com
+│  ├─ url: http://ljharb.codes
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/which-typed-array
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/which-typed-array/LICENSE
+├─ which@2.0.2
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/node-which
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/which
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/which/LICENSE
+├─ word-wrap@1.2.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jonschlinkert/word-wrap
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/word-wrap
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/word-wrap/LICENSE
+├─ yallist@3.1.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/yallist
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/yallist
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/yallist/LICENSE
+├─ yocto-queue@0.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/yocto-queue
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: https://sindresorhus.com
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/yocto-queue
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/yocto-queue/license
+├─ zod-validation-error@4.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/causaly/zod-validation-error
+│  ├─ publisher: Dimitrios C. Michalakos
+│  ├─ email: dimitris@jmike.gr
+│  ├─ url: https://github.com/jmike
+│  ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/zod-validation-error
+│  └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/zod-validation-error/LICENSE
+└─ zod@4.3.6
+   ├─ licenses: MIT
+   ├─ repository: https://github.com/colinhacks/zod
+   ├─ publisher: Colin McDonnell
+   ├─ email: zod@colinhacks.com
+   ├─ path: /home/sidd/Documents/GitHub/Portfolio/node_modules/zod
+   └─ licenseFile: /home/sidd/Documents/GitHub/Portfolio/node_modules/zod/LICENSE
+
