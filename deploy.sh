@@ -389,17 +389,17 @@ fi
 cd "\$HOME/app"
 npm install --silent
 
-# SSL certs (used internally; Caddy terminates TLS externally with a trusted cert)
-if [ ! -f key.pem ]; then
-  openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -nodes -subj "/CN=localhost" 2>/dev/null
-fi
+# Remove any self-signed certs — Caddy handles TLS; backend must serve plain HTTP
+rm -f key.pem cert.pem
 
 # Restart
-pkill -f "node index.js" 2>/dev/null || true; sleep 1
+pkill -f "node.*index.js" 2>/dev/null || true; sleep 1
 
 if [ -f run.sh ]; then
   # run.sh hardcodes APP_DIR to ~/Labyrinth — redirect it to our clone location
   sed -i "s|APP_DIR=.*|APP_DIR=\"\$HOME/app\"|" run.sh
+  # Redirect node stdout/stderr to ~/app.log so logsync can tail it
+  sed -i 's|>>"\$LOG_DIR/app.out.log" 2>>"\$LOG_DIR/app.err.log"|>> "\$HOME/app.log" 2>\&1|' run.sh
   chmod +x run.sh
   # run.sh detects the raw public IP, writes config.json, patches main.js, and starts the app
   bash run.sh $port || true
@@ -1505,9 +1505,13 @@ export NVM_DIR="\$HOME/.nvm"
 cd "\$HOME/app"
 git pull -q
 npm install --silent
-pkill -f "node index.js" 2>/dev/null || true; sleep 1
+# Remove any self-signed certs — Caddy handles TLS; backend must serve plain HTTP
+rm -f key.pem cert.pem
+pkill -f "node.*index.js" 2>/dev/null || true; sleep 1
 if [ -f run.sh ]; then
   sed -i "s|APP_DIR=.*|APP_DIR=\"\$HOME/app\"|" run.sh
+  # Redirect node stdout/stderr to ~/app.log so logsync can tail it
+  sed -i 's|>>"\$LOG_DIR/app.out.log" 2>>"\$LOG_DIR/app.err.log"|>> "\$HOME/app.log" 2>\&1|' run.sh
   chmod +x run.sh
   bash run.sh $port || true
   sed -i "s/const host = '[^']*';/const host = '$host_override';/" public/main.js 2>/dev/null || true

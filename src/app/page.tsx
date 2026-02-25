@@ -17,6 +17,18 @@ export default function Home() {
         <AboutMe />
         <Projects />
         <Contact />
+        <footer className="text-center text-xs text-white/40 py-6">
+          &copy; {new Date().getFullYear()} Siddharth Viswanathan. Licensed under the{" "}
+          <a
+            href="https://github.com/Siderskini/Portfolio/blob/main/LICENSE"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-white/70 transition-colors"
+          >
+            MIT License
+          </a>
+          .
+        </footer>
       </main>
     </>
   );
