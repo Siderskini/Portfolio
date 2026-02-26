@@ -6,13 +6,20 @@
 }
 
 @layer base {
+  :root {
+    --g1: #0f0c29;
+    --g2: #302b63;
+    --g3: #24243e;
+  }
+
   html {
     /* Fills iPhone safe-area gutters (notch / home bar) with the theme's darkest colour. */
-    background-color: #0f0c29;
+    background-color: var(--g1);
+    transition: background-color 0.6s ease;
   }
 
   body {
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background: linear-gradient(135deg, var(--g1), var(--g2), var(--g3));
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     min-height: 100vh;
