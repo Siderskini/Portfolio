@@ -38,7 +38,7 @@ export default function Header() {
           Sidd Viswanathan
         </h1>
         <p className="text-xl md:text-2xl text-white/70 font-light tracking-wide">
-          Agentic Software Developer
+          Agentic Game Developer
         </p>
       </GlassPanel>
     </section>

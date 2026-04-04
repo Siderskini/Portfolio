@@ -15,25 +15,11 @@ export default function AboutMe() {
         </h2>
         <div className="space-y-4 text-lg text-white/80 leading-relaxed mb-10">
           <p>
-            Senior Software Engineer with 5+ years of experience building platform-scale systems.
-            Most recently, I led Team Diablo at C3 AI, where I designed and maintained core platform
-            infrastructure — data storage across file, KV, SQL, vector, and search datastores;
-            data integration pipelines; serialization frameworks; and distributed task dispatching systems.
-          </p>
-          <p>
-            I am a listed 
-            <a href="https://ido3rinj0f2b.objectstorage.us-ashburn-1.oci.customer-oci.com/n/ido3rinj0f2b/b/bucket-portfolio/o/patent.pdf">&nbsp;patent&nbsp;</a> 
-            contributor for a 
-            <a href="https://c3.ai/blog/what-is-a-feature-store/">&nbsp;Metadata-Driven Feature Store for Machine Learning Systems&nbsp;</a> 
-            and carry a Professional Scrum Master I 
-            <a href="https://www.scrum.org/user/1171102">&nbsp;certification</a>
-            . My background spans from nuclear engineering at UC Berkeley to machine learning and full-stack development, 
-            giving me a unique perspective on solving complex engineering challenges.
-          </p>
-          <p>
-            Today, I&apos;m focused on the frontier of agentic software development — building high quality software using agents.
+            I was a Software Engineer for much of the last 7 years.
+            Today, I&apos;m focused on the frontier of agentic game development — building high quality, meaningful games using agents.
             I am pretty tech-stack agnostic, as highlighted in the Open Source Projects section below, but some technologies I 
             have significant experience with are listed below.
+            To get the best understanding of what I'm working on right now, check out <a href="https://github.com/Siderskini/OpenMoji">&nbsp;OpenMoji&nbsp;</a>
           </p>
         </div>
 

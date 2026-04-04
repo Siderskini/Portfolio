@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sidd Viswanathan | Agentic Software Developer",
-  description: "Portfolio of Sidd Viswanathan — Senior Software Engineer and Agentic Software Developer",
+  title: "Sidd Viswanathan | Agentic Game Developer",
+  description: "Portfolio of Sidd Viswanathan — Senior Software Engineer and Agentic Game Developer",
 };
 
 // Colours the iOS Safari status bar and Android browser chrome to match the theme.
