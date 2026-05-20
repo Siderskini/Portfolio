@@ -53,6 +53,16 @@ aws-credentials.json
 # deploy logs
 /logs
 
+# Ansible runtime inventory (written per-deploy; contains live IPs)
+/ansible/inventory/current.ini
+
+# Project-local language runtimes (bootstrapped on first deploy; not committed)
+/.rbenv
+/.nvm
+
+# macOS metadata
+**/.DS_Store
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

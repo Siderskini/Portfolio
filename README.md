@@ -1,5 +1,7 @@
 Disclaimer: The vast majority of this project was created with AI agents. Portfolio text and content is hand created unless specified as otherwise. For information about this project, check [about](https://github.com/Siderskini/Portfolio/tree/main/about).
 
+For information about hosting this project, refer to [Hosting.md](https://github.com/Siderskini/Portfolio/tree/main/Hosting.md)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

@@ -1,0 +1,14 @@
+---
+- name: Refresh app (git pull + restart)
+  hosts: vm
+  gather_facts: true
+  vars:
+    refresh_only: true
+  roles:
+    - role: ruby
+      when: type == 'rails'
+    - role: node
+      when: type in ['node', 'nextjs']
+    - role: app
+    - role: caddy
+      when: fqdn | default('') | length > 0

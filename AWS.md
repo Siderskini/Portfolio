@@ -169,7 +169,7 @@ To update the app on the VM without reprovisioning:
 
 This SSHes in, runs `git pull`, and restarts the process. Caddy is not reinstalled.
 
-After refreshing any cloud project, the script automatically syncs updated URLs to the portfolio VM (if the portfolio is also cloud-hosted on Azure).
+After refreshing any cloud project, the script automatically syncs updated URLs to the portfolio VM (if the portfolio is also cloud-hosted on Azure). This is the only communication between the deploy machine and the portfolio VM — the portfolio VM does not SSH back to project VMs.
 
 ---
 

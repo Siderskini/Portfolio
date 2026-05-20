@@ -1,0 +1,69 @@
+---
+- name: Clone portfolio repo
+  ansible.builtin.git:
+    repo: "{{ clone_url }}"
+    dest: "{{ ansible_env.HOME }}/app"
+    version: "{{ branch }}"
+    accept_hostkey: true
+    update: false
+  when: not (refresh_only | default(false))
+
+- name: Pull latest (refresh)
+  ansible.builtin.shell: git pull -q
+  args:
+    chdir: "{{ ansible_env.HOME }}/app"
+    executable: /bin/bash
+  when: refresh_only | default(false)
+  changed_when: true
+
+# Swap prevents OOM kill during npm install on small VMs (persisted via fstab)
+- name: Set up swap
+  become: true
+  ansible.builtin.shell: |
+    if [ ! -f /swapfile ]; then
+      fallocate -l 2G /swapfile
+      chmod 600 /swapfile
+      mkswap /swapfile
+      swapon /swapfile
+      echo '/swapfile none swap sw 0 0' >> /etc/fstab
+    elif ! swapon --show | grep -q /swapfile; then
+      swapon /swapfile
+    fi
+  args:
+    executable: /bin/bash
+  changed_when: false
+
+- name: npm install
+  ansible.builtin.shell: |
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    npm install --silent
+  args:
+    chdir: "{{ ansible_env.HOME }}/app"
+    executable: /bin/bash
+  changed_when: true
+
+- name: Create logs directory
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/app/logs"
+    state: directory
+    mode: '0755'
+
+- name: Write portfolio.service
+  become: true
+  ansible.builtin.template:
+    src: portfolio.service.j2
+    dest: /etc/systemd/system/portfolio.service
+    mode: '0644'
+  when: not (refresh_only | default(false))
+
+# Service is stopped here; sync_nextjs_build_to_vm rsyncs the .next build and restarts it.
+# The VM never builds — too small. Build runs locally, output is pushed via rsync.
+- name: Enable portfolio service (stopped until build is rsynced)
+  become: true
+  ansible.builtin.systemd:
+    name: portfolio
+    state: stopped
+    enabled: true
+    daemon_reload: true
+  when: not (refresh_only | default(false))

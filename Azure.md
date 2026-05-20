@@ -221,6 +221,8 @@ After deploying all projects, the script runs `sync_urls_to_portfolio_vm`:
 
 The portfolio's "Launch Demo" buttons automatically link to the live cloud URLs.
 
+> **Security note:** The portfolio VM does not SSH back to any project VM. All inter-VM communication is one-directional: the local deploy machine pushes URLs to the portfolio VM. Project VMs are not reachable from the portfolio VM.
+
 ---
 
 ## Refreshing (Pull Latest Code + Restart)

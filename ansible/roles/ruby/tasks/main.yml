@@ -1,0 +1,134 @@
+---
+# OS dependencies
+- name: Install Ruby build dependencies (Debian)
+  become: true
+  ansible.builtin.apt:
+    name:
+      - git
+      - curl
+      - libsqlite3-dev
+      - libssl-dev
+      - zlib1g-dev
+      - libyaml-dev
+      - make
+      - gcc
+      - libffi-dev
+      - libreadline-dev
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+  when: ansible_os_family == 'Debian'
+
+- name: Install Ruby build dependencies (RedHat)
+  become: true
+  ansible.builtin.dnf:
+    name:
+      - git
+      - curl
+      - make
+      - gcc
+      - gcc-c++
+      - libffi-devel
+      - openssl-devel
+      - readline-devel
+      - zlib-devel
+      - sqlite-devel
+    state: present
+  when: ansible_os_family == 'RedHat'
+
+# Snap path: fast pre-compiled Ruby on Ubuntu (when snapd is available)
+- name: Check if snap ruby 3.2 is present (Debian)
+  ansible.builtin.command: /snap/bin/ruby --version
+  register: snap_ruby_check
+  failed_when: false
+  changed_when: false
+  when: ansible_os_family == 'Debian'
+
+- name: Install ruby via snap (Debian)
+  become: true
+  community.general.snap:
+    name: ruby
+    classic: true
+    channel: "3.2/stable"
+  when:
+    - ansible_os_family == 'Debian'
+    - "'ruby 3.2' not in (snap_ruby_check.stdout | default(''))"
+  register: snap_install_result
+  failed_when: false
+
+- name: Verify snap ruby after install (Debian)
+  ansible.builtin.command: /snap/bin/ruby --version
+  register: snap_ruby_verify
+  failed_when: false
+  changed_when: false
+  when: ansible_os_family == 'Debian'
+
+- name: Set snap_ruby_ok fact (Debian)
+  ansible.builtin.set_fact:
+    snap_ruby_ok: "{{ 'ruby 3.2' in (snap_ruby_verify.stdout | default('')) }}"
+  when: ansible_os_family == 'Debian'
+
+- name: Set snap_ruby_ok fact (RedHat — snap unavailable)
+  ansible.builtin.set_fact:
+    snap_ruby_ok: false
+  when: ansible_os_family == 'RedHat'
+
+# rbenv fallback: used on RedHat and on Debian when snap unavailable
+- name: Clone rbenv
+  ansible.builtin.git:
+    repo: https://github.com/rbenv/rbenv.git
+    dest: "{{ ansible_env.HOME }}/.rbenv"
+    depth: 1
+    update: false
+  when: not (snap_ruby_ok | default(false))
+
+- name: Clone ruby-build plugin
+  ansible.builtin.git:
+    repo: https://github.com/rbenv/ruby-build.git
+    dest: "{{ ansible_env.HOME }}/.rbenv/plugins/ruby-build"
+    depth: 1
+  when: not (snap_ruby_ok | default(false))
+
+- name: Install Ruby {{ ruby_version }} via rbenv
+  ansible.builtin.shell: |
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+    rbenv install {{ ruby_version }} --skip-existing
+    rbenv global {{ ruby_version }}
+  args:
+    executable: /bin/bash
+  when: not (snap_ruby_ok | default(false))
+  register: rbenv_install
+  changed_when: "'Downloading' in (rbenv_install.stdout | default(''))"
+
+# Bundler (both paths)
+- name: Install bundler
+  ansible.builtin.shell: |
+    if [ -x /snap/bin/ruby ]; then
+      export PATH="/snap/bin:$PATH"
+    else
+      export PATH="$HOME/.rbenv/bin:$PATH"
+      eval "$(rbenv init -)"
+    fi
+    gem install bundler --no-document 2>/dev/null || true
+  args:
+    executable: /bin/bash
+  changed_when: false
+
+# Export facts consumed by app/rails tasks and service templates
+- name: Set bundle_bin fact (snap)
+  ansible.builtin.set_fact:
+    bundle_bin: /snap/bin/bundle
+  when: snap_ruby_ok | default(false)
+
+- name: Set bundle_bin fact (rbenv)
+  ansible.builtin.set_fact:
+    bundle_bin: "{{ ansible_env.HOME }}/.rbenv/shims/bundle"
+  when: not (snap_ruby_ok | default(false))
+
+- name: Set ruby_path_preamble fact
+  ansible.builtin.set_fact:
+    ruby_path_preamble: >-
+      {{ 'export PATH="/snap/bin:$PATH"'
+         if (snap_ruby_ok | default(false))
+         else 'export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"; eval "$(rbenv init -)" 2>/dev/null || true' }}

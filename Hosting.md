@@ -56,6 +56,8 @@ logs/portfolio.log
 
 PIDs are saved to `logs/<id>.pid` and hosts to `logs/<id>.host` for use by the refresh command.
 
+> **Cloud deployments:** Log files are only written for locally running services. When a project is deployed to a cloud VM, its logs (`~/app.log`) remain on that VM and are not synced back to the portfolio machine. To inspect cloud project logs, SSH directly into the VM: `ssh -i ~/.ssh/portfolio_deploy ubuntu@<ip>`
+
 ---
 
 ## Cloud Deploy (Arbitrarily Distribute Projects Across Providers)

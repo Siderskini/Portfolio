@@ -1,0 +1,15 @@
+{
+    email {{ acme_email }}
+}
+
+{{ fqdn }} {
+{% if backend_scheme == 'https' %}
+    reverse_proxy https://localhost:{{ port }} {
+        transport http {
+            tls_insecure_skip_verify
+        }
+    }
+{% else %}
+    reverse_proxy localhost:{{ port }}
+{% endif %}
+}

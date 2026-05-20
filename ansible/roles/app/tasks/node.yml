@@ -1,0 +1,117 @@
+---
+- name: Clone Node repo
+  ansible.builtin.git:
+    repo: "{{ clone_url }}"
+    dest: "{{ ansible_env.HOME }}/app"
+    version: "{{ branch }}"
+    accept_hostkey: true
+    update: false
+  when: not (refresh_only | default(false))
+
+- name: Pull latest (refresh)
+  ansible.builtin.shell: git pull -q
+  args:
+    chdir: "{{ ansible_env.HOME }}/app"
+    executable: /bin/bash
+  when: refresh_only | default(false)
+  changed_when: true
+
+- name: npm install
+  ansible.builtin.shell: |
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    npm install --silent
+  args:
+    chdir: "{{ ansible_env.HOME }}/app"
+    executable: /bin/bash
+  changed_when: true
+
+- name: Remove self-signed certs (Caddy handles TLS)
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/app/{{ item }}"
+    state: absent
+  loop: [key.pem, cert.pem]
+
+- name: Stop existing node process
+  ansible.builtin.shell: pkill -f "node.*index.js" 2>/dev/null || true; sleep 1
+  args:
+    executable: /bin/bash
+  changed_when: false
+
+- name: Check for run.sh
+  ansible.builtin.stat:
+    path: "{{ ansible_env.HOME }}/app/run.sh"
+  register: run_sh_stat
+
+# run.sh path (Labyrinth): patch APP_DIR and log redirection, then execute
+- name: Patch run.sh APP_DIR
+  ansible.builtin.replace:
+    path: "{{ ansible_env.HOME }}/app/run.sh"
+    regexp: 'APP_DIR=.*'
+    replace: 'APP_DIR="{{ ansible_env.HOME }}/app"'
+  when: run_sh_stat.stat.exists
+
+- name: Patch run.sh log redirection
+  ansible.builtin.replace:
+    path: "{{ ansible_env.HOME }}/app/run.sh"
+    regexp: '>>"\\$LOG_DIR/app\\.out\\.log" 2>>"\\$LOG_DIR/app\\.err\\.log"'
+    replace: '>> "{{ ansible_env.HOME }}/app.log" 2>&1'
+  when: run_sh_stat.stat.exists
+
+- name: Make run.sh executable
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/app/run.sh"
+    mode: '0755'
+  when: run_sh_stat.stat.exists
+
+- name: Start app via run.sh
+  ansible.builtin.shell: |
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    bash run.sh {{ port }} || true
+  args:
+    chdir: "{{ ansible_env.HOME }}/app"
+    executable: /bin/bash
+  when: run_sh_stat.stat.exists
+  changed_when: true
+
+# run.sh writes the raw public IP into public/main.js; re-patch with our Caddy hostname
+- name: Patch main.js host (run.sh path)
+  ansible.builtin.replace:
+    path: "{{ ansible_env.HOME }}/app/public/main.js"
+    regexp: "const host = '[^']*';"
+    replace: "const host = '{{ host_override }}';"
+  when: run_sh_stat.stat.exists
+  failed_when: false
+
+# When behind Caddy + sslip.io, clients connect on 443 (Caddy's HTTPS port), not the app port
+- name: Patch main.js port to 443 (sslip.io behind Caddy)
+  ansible.builtin.replace:
+    path: "{{ ansible_env.HOME }}/app/public/main.js"
+    regexp: 'const port = [0-9]*;'
+    replace: 'const port = 443;'
+  when:
+    - run_sh_stat.stat.exists
+    - "'sslip.io' in (host_override | default(''))"
+  failed_when: false
+
+# Direct path (no run.sh): patch hardcoded IP and start with nohup
+- name: Patch main.js hardcoded IP (no run.sh)
+  ansible.builtin.replace:
+    path: "{{ ansible_env.HOME }}/app/public/main.js"
+    regexp: '34\.57\.176\.17'
+    replace: "{{ host_override }}"
+  when: not run_sh_stat.stat.exists
+  failed_when: false
+
+- name: Start node directly (no run.sh)
+  ansible.builtin.shell: |
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    nohup node index.js > "$HOME/app.log" 2>&1 &
+    echo $! > "$HOME/app.pid"
+  args:
+    chdir: "{{ ansible_env.HOME }}/app"
+    executable: /bin/bash
+  when: not run_sh_stat.stat.exists
+  changed_when: true

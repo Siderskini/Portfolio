@@ -1,0 +1,109 @@
+---
+- name: Install Caddy prerequisites (Debian)
+  become: true
+  ansible.builtin.apt:
+    name: [debian-keyring, debian-archive-keyring, apt-transport-https, curl, gnupg]
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+  when: ansible_os_family == 'Debian'
+
+- name: Download Caddy GPG key (Debian)
+  ansible.builtin.get_url:
+    url: https://dl.cloudsmith.io/public/caddy/stable/gpg.key
+    dest: /tmp/caddy.gpg
+    mode: '0644'
+    force: true
+  when: ansible_os_family == 'Debian'
+
+- name: Install Caddy GPG key (Debian)
+  become: true
+  ansible.builtin.shell: |
+    rm -f /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+    gpg --batch --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg /tmp/caddy.gpg
+    rm -f /tmp/caddy.gpg
+  args:
+    executable: /bin/bash
+  when: ansible_os_family == 'Debian'
+  changed_when: true
+
+- name: Add Caddy apt repository (Debian)
+  become: true
+  ansible.builtin.shell: |
+    curl -fsSL 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | \
+      tee /etc/apt/sources.list.d/caddy-stable.list > /dev/null
+  args:
+    executable: /bin/bash
+  when: ansible_os_family == 'Debian'
+  changed_when: true
+
+- name: Install Caddy (Debian)
+  become: true
+  ansible.builtin.apt:
+    name: caddy
+    state: present
+    update_cache: true
+  when: ansible_os_family == 'Debian'
+
+- name: Install dnf-plugins-core (RedHat)
+  become: true
+  ansible.builtin.dnf:
+    name: dnf-plugins-core
+    state: present
+  when: ansible_os_family == 'RedHat'
+
+- name: Enable Caddy COPR repository (RedHat)
+  become: true
+  ansible.builtin.command: dnf copr enable -y @caddy/caddy
+  args:
+    creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:group_caddy:caddy.repo
+  when: ansible_os_family == 'RedHat'
+
+- name: Install Caddy (RedHat)
+  become: true
+  ansible.builtin.dnf:
+    name: caddy
+    state: present
+  when: ansible_os_family == 'RedHat'
+
+- name: Open firewall ports 80/443 (RedHat)
+  become: true
+  ansible.builtin.shell: |
+    firewall-cmd --permanent --add-port=80/tcp 2>/dev/null || true
+    firewall-cmd --permanent --add-port=443/tcp 2>/dev/null || true
+    firewall-cmd --reload 2>/dev/null || true
+  args:
+    executable: /bin/bash
+  when: ansible_os_family == 'RedHat'
+  changed_when: false
+
+- name: Write Caddyfile
+  become: true
+  ansible.builtin.template:
+    src: Caddyfile.j2
+    dest: /etc/caddy/Caddyfile
+    mode: '0644'
+
+# Stop + clear ACME cache to force a fresh Let's Encrypt cert on every reconfigure.
+# Caddy can hold a staging cert or a failed attempt from a prior run; clearing ensures
+# it requests a production cert with the current hostname.
+- name: Stop Caddy
+  become: true
+  ansible.builtin.systemd:
+    name: caddy
+    state: stopped
+  changed_when: true
+
+- name: Clear Caddy ACME cache
+  become: true
+  ansible.builtin.file:
+    path: /var/lib/caddy/.local/share/caddy/acme
+    state: absent
+
+- name: Enable and start Caddy
+  become: true
+  ansible.builtin.systemd:
+    name: caddy
+    state: started
+    enabled: true
+    daemon_reload: true

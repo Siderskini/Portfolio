@@ -1,0 +1,116 @@
+---
+- name: Clone Rails repo
+  ansible.builtin.git:
+    repo: "{{ clone_url }}"
+    dest: "{{ ansible_env.HOME }}/repo"
+    version: "{{ branch }}"
+    accept_hostkey: true
+    update: false
+  when: not (refresh_only | default(false))
+
+- name: Symlink ~/app -> repo subdir
+  ansible.builtin.file:
+    src: "{{ ansible_env.HOME }}/repo/{{ subdir }}"
+    dest: "{{ ansible_env.HOME }}/app"
+    state: link
+    force: true
+  when:
+    - not (refresh_only | default(false))
+    - subdir | length > 0
+
+- name: Symlink ~/app -> repo root (no subdir)
+  ansible.builtin.file:
+    src: "{{ ansible_env.HOME }}/repo"
+    dest: "{{ ansible_env.HOME }}/app"
+    state: link
+    force: true
+  when:
+    - not (refresh_only | default(false))
+    - subdir | length == 0
+
+- name: Pull latest (refresh)
+  ansible.builtin.shell: git pull -q
+  args:
+    chdir: "{{ ansible_env.HOME }}/app"
+    executable: /bin/bash
+  when: refresh_only | default(false)
+  changed_when: true
+
+- name: Configure bundler local path
+  ansible.builtin.shell: |
+    {{ ruby_path_preamble }}
+    bundle config set --local path vendor/bundle
+  args:
+    chdir: "{{ ansible_env.HOME }}/app"
+    executable: /bin/bash
+  changed_when: false
+
+- name: Bundle install
+  ansible.builtin.shell: |
+    {{ ruby_path_preamble }}
+    bundle install
+  args:
+    chdir: "{{ ansible_env.HOME }}/app"
+    executable: /bin/bash
+  changed_when: true
+
+- name: Generate secret key (first deploy only)
+  ansible.builtin.shell: openssl rand -hex 64 > {{ ansible_env.HOME }}/.flowers_secret
+  args:
+    creates: "{{ ansible_env.HOME }}/.flowers_secret"
+    executable: /bin/bash
+
+- name: Write secret env file
+  ansible.builtin.shell: |
+    echo "SECRET_KEY_BASE=$(cat $HOME/.flowers_secret)" > $HOME/.flowers_secret_env
+    chmod 600 $HOME/.flowers_secret_env
+  args:
+    executable: /bin/bash
+  changed_when: false
+
+- name: db:migrate
+  ansible.builtin.shell: |
+    {{ ruby_path_preamble }}
+    export SECRET_KEY_BASE=$(cat $HOME/.flowers_secret)
+    RAILS_ENV=production bundle exec rails db:migrate 2>/dev/null || true
+  args:
+    chdir: "{{ ansible_env.HOME }}/app"
+    executable: /bin/bash
+  changed_when: false
+
+- name: db:seed
+  ansible.builtin.shell: |
+    {{ ruby_path_preamble }}
+    export SECRET_KEY_BASE=$(cat $HOME/.flowers_secret)
+    RAILS_ENV=production bundle exec rails db:seed 2>/dev/null || true
+  args:
+    chdir: "{{ ansible_env.HOME }}/app"
+    executable: /bin/bash
+  when: not (refresh_only | default(false))
+  changed_when: false
+
+- name: assets:precompile
+  ansible.builtin.shell: |
+    {{ ruby_path_preamble }}
+    export SECRET_KEY_BASE=$(cat $HOME/.flowers_secret)
+    RAILS_ENV=production bundle exec rails assets:precompile 2>/dev/null || true
+  args:
+    chdir: "{{ ansible_env.HOME }}/app"
+    executable: /bin/bash
+  changed_when: false
+
+- name: Write flowers.service
+  become: true
+  ansible.builtin.template:
+    src: flowers.service.j2
+    dest: /etc/systemd/system/flowers.service
+    mode: '0644'
+  when: not (refresh_only | default(false))
+
+- name: Enable and restart flowers
+  become: true
+  ansible.builtin.systemd:
+    name: flowers
+    state: restarted
+    enabled: true
+    daemon_reload: true

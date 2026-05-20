@@ -196,7 +196,7 @@ The portfolio reads this at startup and uses it for the "Launch Demo" button on 
 
 ## How Project URLs Flow to the Portfolio
 
-When cloud projects are deployed, their URLs are written to `.env.local`. If the portfolio is also cloud-deployed on Azure, the script automatically uploads `.env.local` to the portfolio VM and restarts `npm start` — no rebuild needed.
+When cloud projects are deployed, their URLs are written to `.env.local`. If the portfolio is also cloud-deployed on Azure, the script automatically uploads `.env.local` to the portfolio VM and restarts `npm start` — no rebuild needed. The portfolio VM does not SSH back to project VMs; all communication is one-directional from the local deploy machine.
 
 If the portfolio is running locally, restart it to pick up the new URLs:
 

@@ -1,0 +1,12 @@
+---
+- name: Full VM setup
+  hosts: vm
+  gather_facts: true
+  roles:
+    - role: ruby
+      when: type == 'rails'
+    - role: node
+      when: type in ['node', 'nextjs']
+    - role: app
+    - role: caddy
+      when: fqdn | default('') | length > 0

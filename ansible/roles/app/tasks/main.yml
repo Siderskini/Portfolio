@@ -1,0 +1,3 @@
+---
+- name: Dispatch to app type tasks
+  ansible.builtin.include_tasks: "{{ type }}.yml"

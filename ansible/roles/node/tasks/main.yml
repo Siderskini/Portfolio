@@ -1,0 +1,49 @@
+---
+- name: Install Node dependencies (Debian)
+  become: true
+  ansible.builtin.apt:
+    name: [git, curl, openssl]
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+  when: ansible_os_family == 'Debian'
+
+- name: Install Node dependencies (RedHat)
+  become: true
+  ansible.builtin.dnf:
+    name: [git, curl, openssl]
+    state: present
+  when: ansible_os_family == 'RedHat'
+
+- name: Install nvm
+  ansible.builtin.shell: |
+    [ -d "$HOME/.nvm" ] || curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_version }}/install.sh | bash
+  args:
+    executable: /bin/bash
+  changed_when: false
+
+- name: Install Node LTS via nvm
+  ansible.builtin.shell: |
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    nvm install --lts
+  args:
+    executable: /bin/bash
+  register: nvm_install
+  changed_when: "'Downloading and installing' in (nvm_install.stdout | default(''))"
+
+- name: Get node binary path
+  ansible.builtin.shell: |
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    readlink -f "$(which node)"
+  args:
+    executable: /bin/bash
+  register: node_bin_path
+  changed_when: false
+
+# Export facts consumed by app/nextjs tasks and service templates
+- name: Set node facts
+  ansible.builtin.set_fact:
+    node_bin_dir: "{{ node_bin_path.stdout | dirname }}"
+    npm_bin: "{{ node_bin_path.stdout | dirname }}/npm"
