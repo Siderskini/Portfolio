@@ -55,12 +55,4 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/Siderskini/CodexBar",
     tags: ["Rust", "KDE Plasma", "Swift", "Codex"],
   },
-  {
-    id: "dqrvcs",
-    title: "DQRVCS",
-    description:
-      "A decentralized, (soon to be) quantum-resistant version control system. Git-compatible CLI built on a gossip-based peer network with democratic consensus for collaboration. Includes a Rust eframe/egui desktop GUI. Built with Codex (AI).",
-    repoUrl: "https://github.com/Siderskini/DQRVCS",
-    tags: ["Go", "Rust", "Cryptography", "Decentralized"],
-  },
 ];

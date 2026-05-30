@@ -6,35 +6,40 @@
     state: present
     update_cache: true
     cache_valid_time: 3600
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 
 - name: Install python3 and git (RedHat)
   become: true
   ansible.builtin.dnf:
     name: [git, python3]
     state: present
-  when: ansible_os_family == 'RedHat'
+  when: ansible_facts['os_family'] == 'RedHat'
 
 # Always pull latest — http.server serves files from disk, no restart needed after pull
 - name: Clone or update wasm repo
   ansible.builtin.git:
     repo: "{{ clone_url }}"
-    dest: "{{ ansible_env.HOME }}/repo"
+    dest: "{{ ansible_facts['env']['HOME'] }}/repo"
     version: "{{ branch }}"
     accept_hostkey: true
     update: true
 
 - name: Stop existing http.server
-  ansible.builtin.shell: pkill -f "python3 -m http.server" 2>/dev/null || true; sleep 1
+  ansible.builtin.shell: |
+    if [ -f "$HOME/app.pid" ]; then
+      kill "$(cat $HOME/app.pid)" 2>/dev/null || true
+      rm -f "$HOME/app.pid"
+      sleep 1
+    fi
   args:
     executable: /bin/bash
   changed_when: false
 
 - name: Start python http.server
   ansible.builtin.shell: |
-    nohup python3 -m http.server {{ port }} > "$HOME/app.log" 2>&1 &
+    nohup python3 -m http.server {{ app_port }} > "$HOME/app.log" 2>&1 &
     echo $! > "$HOME/app.pid"
   args:
-    chdir: "{{ ansible_env.HOME }}/repo{% if subdir | length > 0 %}/{{ subdir }}{% endif %}"
+    chdir: "{{ ansible_facts['env']['HOME'] }}/repo{% if subdir | length > 0 %}/{{ subdir }}{% endif %}"
     executable: /bin/bash
   changed_when: true

@@ -4,14 +4,15 @@ After=network.target
 
 [Service]
 Type=simple
-User={{ ansible_user_id }}
-WorkingDirectory={{ ansible_env.HOME }}/app
+User={{ ansible_facts['user_id'] }}
+WorkingDirectory={{ ansible_facts['env']['HOME'] }}/app
 Environment=PATH={{ node_bin_dir }}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ExecStart={{ npm_bin }} start
 Restart=always
 RestartSec=5
-StandardOutput=append:{{ ansible_env.HOME }}/app/logs/portfolio.log
-StandardError=append:{{ ansible_env.HOME }}/app/logs/portfolio.log
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=portfolio
 
 [Install]
 WantedBy=multi-user.target

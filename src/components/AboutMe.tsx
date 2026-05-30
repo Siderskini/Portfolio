@@ -15,11 +15,12 @@ export default function AboutMe() {
         </h2>
         <div className="space-y-4 text-lg text-white/80 leading-relaxed mb-10">
           <p>
-            I was a Software Engineer for much of the last 7 years.
-            Today, I&apos;m focused on the frontier of agentic game development — building high quality, meaningful games using agents.
+            I am a problem solver with an education in Nuclear Enigneering and Computer Science from the University of Claifornia, Berkeley.
+            I also have 5 years of professional experience in natural language processing, AI, cloud infrastructure, distributed computing at scale, and storage technologies. 
+            Today, I&apos;m focused on the frontier of agentic development — building high quality, meaningful software using agents.
             I am pretty tech-stack agnostic, as highlighted in the Open Source Projects section below, but some technologies I 
             have significant experience with are listed below.
-            To get the best understanding of what I'm working on right now, check out <a href="https://github.com/Siderskini/OpenMoji">&nbsp;OpenMoji&nbsp;</a>
+            To see agentic development at work, check out the <a href="https://github.com/Siderskini/Portfolio">&nbsp;source code&nbsp;</a> for this portfolio!
           </p>
         </div>
 

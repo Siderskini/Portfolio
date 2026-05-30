@@ -17,7 +17,7 @@
     state: present
     update_cache: true
     cache_valid_time: 3600
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 
 - name: Install Ruby build dependencies (RedHat)
   become: true
@@ -34,7 +34,7 @@
       - zlib-devel
       - sqlite-devel
     state: present
-  when: ansible_os_family == 'RedHat'
+  when: ansible_facts['os_family'] == 'RedHat'
 
 # Snap path: fast pre-compiled Ruby on Ubuntu (when snapd is available)
 - name: Check if snap ruby 3.2 is present (Debian)
@@ -42,7 +42,7 @@
   register: snap_ruby_check
   failed_when: false
   changed_when: false
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 
 - name: Install ruby via snap (Debian)
   become: true
@@ -51,7 +51,7 @@
     classic: true
     channel: "3.2/stable"
   when:
-    - ansible_os_family == 'Debian'
+    - ansible_facts['os_family'] == 'Debian'
     - "'ruby 3.2' not in (snap_ruby_check.stdout | default(''))"
   register: snap_install_result
   failed_when: false
@@ -61,23 +61,23 @@
   register: snap_ruby_verify
   failed_when: false
   changed_when: false
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 
 - name: Set snap_ruby_ok fact (Debian)
   ansible.builtin.set_fact:
     snap_ruby_ok: "{{ 'ruby 3.2' in (snap_ruby_verify.stdout | default('')) }}"
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 
 - name: Set snap_ruby_ok fact (RedHat — snap unavailable)
   ansible.builtin.set_fact:
     snap_ruby_ok: false
-  when: ansible_os_family == 'RedHat'
+  when: ansible_facts['os_family'] == 'RedHat'
 
 # rbenv fallback: used on RedHat and on Debian when snap unavailable
 - name: Clone rbenv
   ansible.builtin.git:
     repo: https://github.com/rbenv/rbenv.git
-    dest: "{{ ansible_env.HOME }}/.rbenv"
+    dest: "{{ ansible_facts['env']['HOME'] }}/.rbenv"
     depth: 1
     update: false
   when: not (snap_ruby_ok | default(false))
@@ -85,7 +85,7 @@
 - name: Clone ruby-build plugin
   ansible.builtin.git:
     repo: https://github.com/rbenv/ruby-build.git
-    dest: "{{ ansible_env.HOME }}/.rbenv/plugins/ruby-build"
+    dest: "{{ ansible_facts['env']['HOME'] }}/.rbenv/plugins/ruby-build"
     depth: 1
   when: not (snap_ruby_ok | default(false))
 
@@ -123,7 +123,7 @@
 
 - name: Set bundle_bin fact (rbenv)
   ansible.builtin.set_fact:
-    bundle_bin: "{{ ansible_env.HOME }}/.rbenv/shims/bundle"
+    bundle_bin: "{{ ansible_facts['env']['HOME'] }}/.rbenv/shims/bundle"
   when: not (snap_ruby_ok | default(false))
 
 - name: Set ruby_path_preamble fact

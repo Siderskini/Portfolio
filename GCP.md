@@ -1,6 +1,23 @@
 # Deploying to GCP (Google Cloud)
 
-The deploy script can provision a GCP `e2-micro` instance running Ubuntu 22.04, deploy any project to it, and serve it over **HTTPS via [sslip.io](https://sslip.io) + Caddy** — no domain purchase required.
+The deploy script provisions a GCP `e2-micro` instance running Ubuntu 22.04, deploys your project, and serves it over **HTTPS via [sslip.io](https://sslip.io) + Caddy** — no domain purchase required.
+
+For wasm projects, you can instead deploy to GCS object storage — no VM needed. See the [Wasm Object Storage](#wasm-object-storage-gcs) section below.
+
+---
+
+## How HTTPS Works Without a Domain
+
+[sslip.io](https://sslip.io) is a free public DNS service that resolves `34-56-78-90.sslip.io` to the IP `34.56.78.90`. This gives your GCP instance a stable domain name that Let's Encrypt can issue a trusted certificate for.
+
+The deploy script:
+1. Deploys your app on its internal port
+2. Installs [Caddy](https://caddyserver.com/) on the VM
+3. Configures Caddy to listen on `<ip-with-dashes>.sslip.io` (ports 80/443)
+4. Caddy automatically obtains a Let's Encrypt certificate
+5. Caddy reverse-proxies HTTPS traffic to your app
+
+**Example:** GCP IP `34.56.78.90` → URL `https://34-56-78-90.sslip.io`
 
 ---
 
@@ -8,7 +25,7 @@ The deploy script can provision a GCP `e2-micro` instance running Ubuntu 22.04, 
 
 | Property | Value |
 |---|---|
-| Machine type | `e2-micro` (Always Free in `us-east1`, `us-west1`, `us-central1`) |
+| Machine type | `e2-micro` (Always Free in `us-central1`, `us-west1`, `us-east1`) |
 | OS | Ubuntu 22.04 LTS |
 | SSH key | `~/.ssh/portfolio_deploy` (4096-bit RSA, auto-generated) |
 | SSH user | `ubuntu` |
@@ -16,24 +33,11 @@ The deploy script can provision a GCP `e2-micro` instance running Ubuntu 22.04, 
 | Zone | `<region>-a` |
 | Firewall tag | `portfolio-server` |
 
-> **Always Free tier:** One `e2-micro` VM per month at no cost in the three US regions listed above. Check https://cloud.google.com/free for current limits.
+> **Always Free tier:** One `e2-micro` VM per month at no cost in the three US regions listed. See https://cloud.google.com/free for current limits.
 
----
+> **GCP region format:** GCP regions use the format `us-central1` (no hyphen before the number), not `us-central-1` as in AWS. Using an AWS-style region name will cause an error.
 
-## How HTTPS Works Without a Domain
-
-[sslip.io](https://sslip.io) is a free public DNS service that resolves hostnames like `34-56-78-90.sslip.io` to the IP `34.56.78.90`. This gives your GCP instance a stable domain name that Let's Encrypt can issue a trusted certificate for.
-
-The deploy script:
-1. Deploys your app on its internal port (e.g. 8080)
-2. Installs [Caddy](https://caddyserver.com/) on the VM
-3. Configures Caddy to listen on `<ip-with-dashes>.sslip.io` (ports 80/443)
-4. Caddy automatically obtains a Let's Encrypt certificate for that hostname
-5. Caddy reverse-proxies HTTPS traffic to your app
-
-**Example:** GCP IP `34.56.78.90` → URL `https://34-56-78-90.sslip.io`
-
-**Port 80 must remain open** — Let's Encrypt's HTTP-01 challenge requires it. The deploy script creates the `portfolio-caddy` firewall rule opening ports 80 and 443 automatically.
+> **Zone availability:** The script appends `-a` to your region to form the zone (e.g. `us-central1` → zone `us-central1-a`). Note that `us-east1` does **not** have a zone `a` — use `us-central1` or `us-west1` instead if you want Always Free.
 
 ---
 
@@ -41,8 +45,7 @@ The deploy script:
 
 1. Go to [console.cloud.google.com](https://console.cloud.google.com)
 2. Click the project dropdown → **New Project**
-3. Name it (e.g. `portfolio-deploy`) and create it
-4. Note the **Project ID** (used in the service account key)
+3. Name it and create it; note the **Project ID**
 
 Enable the Compute Engine API:
 
@@ -50,7 +53,7 @@ Enable the Compute Engine API:
 gcloud services enable compute.googleapis.com --project <your-project-id>
 ```
 
-Or enable it in the Console: **APIs & Services → Enable APIs and Services → search "Compute Engine API"**.
+Or in the Console: **APIs & Services → Enable APIs and Services → search "Compute Engine API"**.
 
 ---
 
@@ -58,9 +61,7 @@ Or enable it in the Console: **APIs & Services → Enable APIs and Services → 
 
 1. Go to **IAM & Admin → Service Accounts → Create Service Account**
 2. Name: `portfolio-deploy`
-3. **Grant roles:**
-   - `Compute Admin`
-   - `Service Account User`
+3. **Grant roles:** `Compute Admin` and `Service Account User`
 4. Click **Done**
 
 ---
@@ -70,19 +71,6 @@ Or enable it in the Console: **APIs & Services → Enable APIs and Services → 
 1. Click on the service account you just created
 2. **Keys → Add Key → Create new key → JSON**
 3. Download the file (e.g. `gcp-service-account.json`)
-
-The file looks like:
-
-```json
-{
-  "type": "service_account",
-  "project_id": "portfolio-deploy",
-  "private_key_id": "abc123...",
-  "private_key": "-----BEGIN RSA PRIVATE KEY-----\n...",
-  "client_email": "portfolio-deploy@portfolio-deploy.iam.gserviceaccount.com",
-  ...
-}
-```
 
 The deploy script reads `project_id` from this file automatically.
 
@@ -106,28 +94,11 @@ Verify: `gcloud --version`
 
 ## Step 5 — Add an Entry to `cloud.json`
 
-Copy `cloud.json.template` to `cloud.json` if you haven't already:
-
 ```bash
 cp cloud.json.template cloud.json
 ```
 
-Example entry for the Fishing game (Go/WASM, served by Python):
-
-```json
-{
-  "fishing": {
-    "repoUrl": "https://github.com/Siderskini/LearningGo/tree/main/fishing/web",
-    "type": "wasm",
-    "port": 8080,
-    "provider": "gcp",
-    "region": "us-central1",
-    "authKey": "/home/you/gcp-service-account.json"
-  }
-}
-```
-
-Example entry for the Flowers Rails app:
+Example entry for Flowers (Ruby on Rails):
 
 ```json
 {
@@ -137,7 +108,22 @@ Example entry for the Flowers Rails app:
     "port": 3001,
     "provider": "gcp",
     "region": "us-central1",
-    "authKey": "/home/you/gcp-service-account.json"
+    "authKey": "./gcp-service-account.json"
+  }
+}
+```
+
+Example entry for Labyrinth (Node.js):
+
+```json
+{
+  "labyrinth": {
+    "repoUrl": "https://github.com/Siderskini/Labyrinth",
+    "type": "node",
+    "port": 4000,
+    "provider": "gcp",
+    "region": "us-central1",
+    "authKey": "./gcp-service-account.json"
   }
 }
 ```
@@ -150,8 +136,8 @@ Example entry for the Flowers Rails app:
 | `type` | `rails`, `node`, `wasm`, or `nextjs` |
 | `port` | Internal port the app listens on |
 | `provider` | `gcp` |
-| `region` | GCP region (e.g. `us-central1`, `us-east1`, `us-west1`, `europe-west1`) |
-| `authKey` | Absolute or relative path to your service account JSON key |
+| `region` | GCP region — use format `us-central1`, **not** `us-central-1` |
+| `authKey` | Relative or absolute path to your service account JSON key |
 
 ---
 
@@ -163,16 +149,36 @@ Example entry for the Flowers Rails app:
 
 The script will:
 
-1. Activate the service account: `gcloud auth activate-service-account --key-file=...`
-2. Set the GCP project from the key file
-3. Create firewall rule `portfolio-app` allowing the app port, and `portfolio-caddy` allowing ports 80 and 443 — both tagged `portfolio-server` (idempotent)
-4. Launch an `e2-micro` Ubuntu 22.04 instance in zone `<region>-a` tagged `portfolio-server`
-5. Wait ~20 seconds for the VM to boot and SSH to become available
-6. SSH in and run the project setup (installs Node/Ruby/Python, clones repo, starts app)
-7. Install Caddy and configure it for `https://<ip-with-dashes>.sslip.io`
-8. Write the HTTPS URL to `.env.local`
+1. Activate the service account and set the GCP project from the key file
+2. Create firewall rules `portfolio-app` (app port) and `portfolio-caddy` (80/443) tagged `portfolio-server` — idempotent
+3. Launch an `e2-micro` Ubuntu 22.04 instance in zone `<region>-a` (or reuse/start an existing one)
+4. Wait for SSH readiness
+5. Run an Ansible playbook: install the runtime (Node/Ruby), clone the repo, start the app as a systemd service
+6. Install Caddy and configure it for `https://<ip-with-dashes>.sslip.io`
+7. Write the HTTPS URL to `.env.local`
 
-**Re-running deploy never creates a duplicate VM** — instances are found by name (`portfolio-<id>`) in the zone.
+Re-running deploy never creates a duplicate VM — instances are found by name in the zone.
+
+---
+
+## Wasm Object Storage (GCS)
+
+For `type: "wasm"` projects, adding a `bucket` field deploys to Google Cloud Storage instead of a VM:
+
+```json
+{
+  "fishing": {
+    "repoUrl": "https://github.com/Siderskini/LearningGo/tree/main/fishing/web",
+    "type": "wasm",
+    "provider": "gcp",
+    "region": "us-central1",
+    "authKey": "./gcp-service-account.json",
+    "bucket": "my-portfolio-fishing"
+  }
+}
+```
+
+Bucket names must be globally unique. The service account needs `Storage Admin` role for this path.
 
 ---
 
@@ -181,27 +187,13 @@ The script will:
 After deploy, the console prints:
 
 ```
-[deploy]  fishing      https://34-56-78-90.sslip.io
+[deploy]  flowers    https://34-56-78-90.sslip.io
 ```
 
 This is also written to `.env.local`:
 
 ```
-FISHING_URL=https://34-56-78-90.sslip.io
-```
-
-The portfolio reads this at startup and uses it for the "Launch Demo" button on the Fishing card. The certificate is trusted — no browser warning.
-
----
-
-## How Project URLs Flow to the Portfolio
-
-When cloud projects are deployed, their URLs are written to `.env.local`. If the portfolio is also cloud-deployed on Azure, the script automatically uploads `.env.local` to the portfolio VM and restarts `npm start` — no rebuild needed. The portfolio VM does not SSH back to project VMs; all communication is one-directional from the local deploy machine.
-
-If the portfolio is running locally, restart it to pick up the new URLs:
-
-```bash
-./deploy.sh --refresh portfolio
+FLOWERS_URL=https://34-56-78-90.sslip.io
 ```
 
 ---
@@ -209,10 +201,12 @@ If the portfolio is running locally, restart it to pick up the new URLs:
 ## Refreshing (Pull Latest Code + Restart)
 
 ```bash
-./deploy.sh --cloud cloud.json --refresh fishing
+./deploy.sh --cloud cloud.json --refresh flowers
 ```
 
-This SSHes in, runs `git pull`, and restarts the process. The VM is not reprovisioned.
+For VM projects: SSHes in, runs `git pull`, and restarts the service via Ansible. The VM is not reprovisioned.
+
+For wasm+GCS: re-clones/pulls locally and re-uploads all files to the bucket.
 
 ---
 
@@ -221,24 +215,24 @@ This SSHes in, runs `git pull`, and restarts the process. The VM is not reprovis
 **"Permission denied" on gcloud commands**
 The service account needs `Compute Admin` and `Service Account User` roles. Grant them in **IAM & Admin → IAM**.
 
-**Firewall rule creation fails**
-If `portfolio-app` or `portfolio-caddy` already exists with different settings, the script ignores the error (`|| true`). Verify the existing rules in **VPC Network → Firewall** — `portfolio-caddy` must allow TCP 80 and 443.
+**"Permission denied on 'locations/...' (or it may not exist)"**
+You used an AWS-style region name (e.g. `us-east-1` instead of `us-east1`). GCP regions do not have a hyphen before the number. Fix the `region` field in `cloud.json`.
+
+**Zone `us-east1-a` does not exist**
+`us-east1` only has zones `b`, `c`, and `d` — it has no zone `a`. Use `us-central1` or `us-west1` instead (both have zone `a` and are Always Free eligible).
 
 **SSH times out after instance creation**
-The script waits 20 seconds after launch. GCP instances typically boot in 30–60 seconds. If SSH fails, wait a minute and run:
+The script waits for the instance to reach RUNNING state, but SSH can take another 30–60 seconds after that. Run:
 ```bash
-./deploy.sh --cloud cloud.json --refresh fishing
+./deploy.sh --cloud cloud.json --refresh <id>
 ```
-
-**App is reachable on its port but not via sslip.io**
-Caddy reverse-proxies from the sslip.io hostname on 443 to `localhost:<port>`. If Caddy isn't running, SSH into the VM and check: `sudo systemctl status caddy` and `sudo journalctl -u caddy -n 50`.
 
 **Caddy fails to obtain a certificate**
-Port 80 must be reachable from the internet for the HTTP-01 challenge. Verify the `portfolio-caddy` firewall rule:
+Port 80 must be reachable from the internet. Verify the `portfolio-caddy` firewall rule:
 ```bash
 gcloud compute firewall-rules describe portfolio-caddy
-gcloud compute instances describe portfolio-fishing --zone=us-central1-a --format="value(tags.items)"
 ```
+On the VM: `sudo systemctl status caddy` and `sudo journalctl -u caddy -n 50`.
 
 **`e2-micro` not available in chosen region**
-Try `us-central1`, `us-east1`, or `us-west1` — these support `e2-micro` and are in the Always Free tier.
+Use `us-central1`, `us-east1`, or `us-west1`. These are the Always Free tier regions and reliably support `e2-micro`.

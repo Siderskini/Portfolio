@@ -4,12 +4,12 @@
 
 {{ fqdn }} {
 {% if backend_scheme == 'https' %}
-    reverse_proxy https://localhost:{{ port }} {
+    reverse_proxy https://localhost:{{ app_port }} {
         transport http {
             tls_insecure_skip_verify
         }
     }
 {% else %}
-    reverse_proxy localhost:{{ port }}
+    reverse_proxy localhost:{{ app_port }}
 {% endif %}
 }

@@ -26,12 +26,12 @@ print(ak.get('SecretAccessKey') or ak.get('aws_secret_access_key',''))")
 
     ensure_ssh_key
 
-    # Import SSH key pair if not present
-    aws ec2 describe-key-pairs --key-names "portfolio-deploy" --region "$region" &>/dev/null || \
-        aws ec2 import-key-pair \
-            --key-name "portfolio-deploy" \
-            --public-key-material "fileb://${SSH_KEY}.pub" \
-            --region "$region" --output text > /dev/null
+    # Always sync the key pair so local private key and AWS public key stay in step.
+    aws ec2 delete-key-pair --key-name "portfolio-deploy" --region "$region" --output text > /dev/null 2>&1 || true
+    aws ec2 import-key-pair \
+        --key-name "portfolio-deploy" \
+        --public-key-material "fileb://${SSH_KEY}.pub" \
+        --region "$region" --output text > /dev/null
 
     # Security group
     local sg_id
@@ -192,6 +192,14 @@ print(d.get('subscriptionId',''))")
             log "Starting existing Azure VM $vm_name (state: ${power_state:-unknown})..."
             az vm start --name "$vm_name" --resource-group "$rg" --output none
         fi
+        # Sync current local public key so key rotation never locks us out
+        log "Syncing SSH public key to $vm_name..."
+        az vm user update \
+            --resource-group "$rg" \
+            --name "$vm_name" \
+            --username ubuntu \
+            --ssh-key-value "$(cat "${SSH_KEY}.pub")" \
+            --output none
     fi
 
     if [ -n "$dns_label" ]; then

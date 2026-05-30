@@ -1,45 +1,29 @@
-Disclaimer: The vast majority of this project was created with AI agents. Portfolio text and content is hand created unless specified as otherwise. For information about this project, check [about](https://github.com/Siderskini/Portfolio/tree/main/about).
+Disclaimer: The vast majority of this project was created with AI agents. Portfolio text and content is hand-created unless specified otherwise. For information about this project, see [about/About.md](about/About.md).
 
-For information about hosting this project, refer to [Hosting.md](https://github.com/Siderskini/Portfolio/tree/main/Hosting.md)
+# Portfolio
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A Next.js portfolio that links to three live project demos — a Ruby on Rails app, a Node.js multiplayer game, and a Go/WASM game. Each demo can be run locally or deployed to any combination of AWS, Azure, GCP, and OCI cloud providers.
 
-## Getting Started
-
-First, run the development server:
+## Quick Start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+./deploy.sh
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This runs everything locally. No cloud accounts required. See [Hosting.md](Hosting.md) for full local and cloud deployment instructions.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Projects
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
+| Project | Technology | Repo |
+|---|---|---|
+| Flowers | Ruby on Rails | [Siderskini/RubyOnRails](https://github.com/Siderskini/RubyOnRails/tree/main/Flowers) |
+| Labyrinth | Node.js + Socket.io | [Siderskini/Labyrinth](https://github.com/Siderskini/Labyrinth) |
+| Fishing Game | Go/WASM | [Siderskini/LearningGo](https://github.com/Siderskini/LearningGo/tree/main/fishing/web) |
 
 ## License Scan
 
 This project has been scanned using `scancode -clpieu --json-pp portfolio.json /home/sidd/Documents/GitHub/Portfolio/src` and the result is available in portfolio.json.
+
+A license scan via `npx license-checker` is available in npmLicenseScan.txt.
+
+Note that the scan shows `@img/sharp-libvips*` as `LGPL-3.0-or-later`, but the repo states `Apache 2.0`. If there are any licensing issues, please open an issue.

@@ -15,7 +15,7 @@
     "port": 3001,
     "provider": "aws",
     "region": "us-east-1",
-    "authKey": "/path/to/aws-credentials"
+    "authKey": "/path/to/aws-credentials.json"
   },
   "labyrinth": {
     "repoUrl": "https://github.com/Siderskini/Labyrinth",
@@ -25,44 +25,24 @@
     "region": "us-central1",
     "authKey": "/path/to/gcp-service-account.json"
   },
-
-  "fishing-oci": {
+  "fishing": {
     "repoUrl": "https://github.com/Siderskini/LearningGo/tree/main/fishing/web",
     "type": "wasm",
     "provider": "oci",
     "region": "us-ashburn-1",
-    "authKey": "/path/to/oci-auth.json",
+    "authKey": "/path/to/oci-credentials.json",
     "bucket": "my-bucket-name"
-  },
-  "fishing-aws": {
-    "repoUrl": "https://github.com/Siderskini/LearningGo/tree/main/fishing/web",
-    "type": "wasm",
-    "provider": "aws",
-    "region": "us-east-1",
-    "authKey": "/path/to/aws-credentials.json",
-    "bucket": "globally-unique-bucket-name"
-  },
-  "fishing-gcp": {
-    "repoUrl": "https://github.com/Siderskini/LearningGo/tree/main/fishing/web",
-    "type": "wasm",
-    "provider": "gcp",
-    "region": "us-central1",
-    "authKey": "/path/to/gcp-service-account.json",
-    "bucket": "globally-unique-bucket-name"
-  },
-  "fishing-azure": {
-    "repoUrl": "https://github.com/Siderskini/LearningGo/tree/main/fishing/web",
-    "type": "wasm",
-    "provider": "azure",
-    "region": "eastus",
-    "authKey": "/path/to/azure-service-principal.json",
-    "bucket": "wasm",
-    "storageAccount": "globally-unique-account-name"
   },
 
   "_notes": {
-    "wasm-storage": "wasm projects default to object storage when 'bucket' is set. Use --vm flag to host on a VM instead.",
-    "wasm-azure-storageAccount": "Azure requires 'storageAccount' (storage account name, ≤24 chars, globally unique, lowercase) in addition to 'bucket' (container name).",
-    "wasm-port": "'port' is ignored for object storage wasm deployments (no VM is provisioned)."
+    "project-ids": "Keys must exactly match the deploy script IDs: 'flowers', 'labyrinth', 'fishing', 'portfolio'. Any other key name is silently ignored.",
+    "wasm-storage": "wasm projects deploy to object storage when 'bucket' is set (no VM provisioned). Use --vm to force VM hosting instead.",
+    "wasm-azure": "Azure wasm also requires 'storageAccount' (globally unique, lowercase, ≤24 chars).",
+    "wasm-gcp-bucket": "GCP bucket names must be globally unique.",
+    "wasm-aws-bucket": "AWS bucket names must be globally unique.",
+    "wasm-port": "'port' is ignored for object storage wasm deployments.",
+    "gcp-region": "GCP regions use format 'us-central1' (no hyphen before number), not 'us-central-1'.",
+    "oci-shape": "OCI uses VM.Standard.A1.Flex (ARM, Oracle Linux 9). Always Free instances must be in your home region.",
+    "oci-ssh-user": "OCI SSH user is 'opc', not 'ubuntu'."
   }
 }

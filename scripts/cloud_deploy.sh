@@ -17,6 +17,7 @@ EOF
 run_ansible() {
     local playbook="$1"; shift
     ANSIBLE_CONFIG="$SCRIPT_DIR/ansible/ansible.cfg" \
+    ANSIBLE_ROLES_PATH="$SCRIPT_DIR/ansible/roles" \
     ansible-playbook \
         -i "$SCRIPT_DIR/ansible/inventory/current.ini" \
         "$SCRIPT_DIR/ansible/playbooks/$playbook" \
@@ -36,7 +37,7 @@ deploy_to_vm() {
     log "Deploying $id to $ip via Ansible (type=$type, port=$port)..."
     run_ansible setup.yml \
         -e "type=$type" \
-        -e "port=$port" \
+        -e "app_port=$port" \
         -e "clone_url=$clone_url" \
         -e "branch=$branch" \
         -e "subdir=$subdir" \
@@ -195,7 +196,7 @@ refresh_cloud_project() {
 
     local extra_vars=(
         -e "type=$type"
-        -e "port=$port"
+        -e "app_port=$port"
         -e "clone_url=$clone_url"
         -e "branch=$branch"
         -e "subdir=$subdir"

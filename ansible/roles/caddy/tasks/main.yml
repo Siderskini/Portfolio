@@ -6,7 +6,7 @@
     state: present
     update_cache: true
     cache_valid_time: 3600
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 
 - name: Download Caddy GPG key (Debian)
   ansible.builtin.get_url:
@@ -14,7 +14,7 @@
     dest: /tmp/caddy.gpg
     mode: '0644'
     force: true
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 
 - name: Install Caddy GPG key (Debian)
   become: true
@@ -24,7 +24,7 @@
     rm -f /tmp/caddy.gpg
   args:
     executable: /bin/bash
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
   changed_when: true
 
 - name: Add Caddy apt repository (Debian)
@@ -34,7 +34,7 @@
       tee /etc/apt/sources.list.d/caddy-stable.list > /dev/null
   args:
     executable: /bin/bash
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
   changed_when: true
 
 - name: Install Caddy (Debian)
@@ -43,28 +43,28 @@
     name: caddy
     state: present
     update_cache: true
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 
 - name: Install dnf-plugins-core (RedHat)
   become: true
   ansible.builtin.dnf:
     name: dnf-plugins-core
     state: present
-  when: ansible_os_family == 'RedHat'
+  when: ansible_facts['os_family'] == 'RedHat'
 
 - name: Enable Caddy COPR repository (RedHat)
   become: true
   ansible.builtin.command: dnf copr enable -y @caddy/caddy
   args:
     creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:group_caddy:caddy.repo
-  when: ansible_os_family == 'RedHat'
+  when: ansible_facts['os_family'] == 'RedHat'
 
 - name: Install Caddy (RedHat)
   become: true
   ansible.builtin.dnf:
     name: caddy
     state: present
-  when: ansible_os_family == 'RedHat'
+  when: ansible_facts['os_family'] == 'RedHat'
 
 - name: Open firewall ports 80/443 (RedHat)
   become: true
@@ -74,7 +74,7 @@
     firewall-cmd --reload 2>/dev/null || true
   args:
     executable: /bin/bash
-  when: ansible_os_family == 'RedHat'
+  when: ansible_facts['os_family'] == 'RedHat'
   changed_when: false
 
 - name: Write Caddyfile

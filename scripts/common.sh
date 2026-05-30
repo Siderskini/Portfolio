@@ -57,7 +57,7 @@ write_env_url() {
     env_key="$(env_key_for_id "$id")"
     env_file="$SCRIPT_DIR/.env.local"
     touch "$env_file"
-    sed -i "/^${env_key}=/d" "$env_file"
+    sed -i '' "/^${env_key}=/d" "$env_file"
     echo "${env_key}=${url}" >> "$env_file"
 }
 

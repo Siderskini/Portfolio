@@ -24,7 +24,9 @@ print(json.load(open(sys.argv[1],encoding='utf-8-sig')).get('compartmentId',''))
 
     local oci_flags=(--config-file "$config_file" --profile "$profile")
     local namespace
-    namespace=$(oci os ns get "${oci_flags[@]}" --query 'data' --raw-output)
+    namespace=$(oci os ns get "${oci_flags[@]}" 2>/dev/null \
+        | python3 -c "import json,sys; print(json.load(sys.stdin).get('data',''))" 2>/dev/null)
+    [ -z "$namespace" ] && err "$id: failed to retrieve OCI Object Storage namespace. Check oci-credentials.json and that profile '$profile' exists in '$config_file'."
 
     # Create bucket if it doesn't exist
     oci os bucket create "${oci_flags[@]}" \

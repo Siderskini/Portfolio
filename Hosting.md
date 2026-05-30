@@ -1,32 +1,35 @@
 # Hosting Guide
 
-This portfolio and its three live project demos can be run entirely on one local machine, or each demo can be deployed independently to AWS, Azure, or GCP — in any combination.
+This portfolio and its three live project demos can run entirely on one local machine, or each demo can be deployed independently to AWS, Azure, GCP, or OCI — in any combination.
 
 ---
 
 ## Services and Ports
 
-| Service | Default URL | Technology |
+| Service | Default Local URL | Technology |
 |---|---|---|
-| Portfolio | http://localhost:3000 | Next.js (Node.js) |
+| Portfolio | http://localhost:3000 | Next.js |
 | Flowers | http://localhost:3001 | Ruby on Rails |
 | Labyrinth | https://localhost:4000 | Node.js + Socket.io (HTTPS) |
-| Fishing Game | http://localhost:8080 | Python static server (Go/WASM) |
+| Fishing Game | http://localhost:8080 | Go/WASM (Python static server) |
 
 ---
 
-## Local Deploy (All on One Machine)
+## Local Deploy
 
 ### Prerequisites
 
-| Tool | Required for | Install |
+| Tool | Required for | Notes |
 |---|---|---|
-| Node.js + npm | Portfolio, Labyrinth | https://nodejs.org |
-| Ruby 3.3 | Flowers | System package or rbenv |
-| `/usr/bin/bundle3.3` | Flowers | `gem install bundler` |
-| Python 3 | Fishing | Included on most systems |
-| OpenSSL | Labyrinth SSL certs | System package |
-| git | Cloning repos | System package |
+| `git` | All projects | System package |
+| `python3` | Fishing Game | Included on most systems |
+| `curl` | Node/Ruby install | System package |
+| Build tools (`make`, `gcc`) | Flowers (Ruby compile) | `xcode-select --install` on macOS; `apt install build-essential` on Debian |
+| Homebrew | macOS Ruby build | Needed to link openssl/zlib/readline for Ruby compilation |
+
+No global Ruby or Node installation is required. The deploy script sets up project-local runtimes automatically:
+- **Ruby** — installed into `.rbenv/` inside the portfolio repo (first run compiles Ruby from source; subsequent runs reuse it)
+- **Node.js** — installed into `.nvm/` inside the portfolio repo
 
 ### Run
 
@@ -36,16 +39,16 @@ chmod +x deploy.sh
 ```
 
 The script will:
-1. Clone `RubyOnRails`, `Labyrinth`, and `LearningGo` into `projects/` (skipped if already present)
-2. Install dependencies for each project
-3. Generate self-signed SSL certs for Labyrinth and patch its hardcoded server IP to `localhost`
-4. Start all four services in the background and write logs to `logs/`
+1. Set up project-local Ruby (rbenv) and Node.js (nvm) environments on first run
+2. Clone `RubyOnRails`, `Labyrinth`, and `LearningGo` into `projects/` (skipped if already present)
+3. Install dependencies for each project
+4. Start all four services in the background
 5. Print a summary of running URLs
-6. Keep running until `Ctrl+C`, which cleanly kills all background processes
+6. Keep running until `Ctrl+C`, which cleanly stops all background processes
 
 ### Logs
 
-Each service writes to its own log file:
+Local service logs are written to:
 
 ```
 logs/flowers.log
@@ -54,200 +57,136 @@ logs/fishing.log
 logs/portfolio.log
 ```
 
-PIDs are saved to `logs/<id>.pid` and hosts to `logs/<id>.host` for use by the refresh command.
-
-> **Cloud deployments:** Log files are only written for locally running services. When a project is deployed to a cloud VM, its logs (`~/app.log`) remain on that VM and are not synced back to the portfolio machine. To inspect cloud project logs, SSH directly into the VM: `ssh -i ~/.ssh/portfolio_deploy ubuntu@<ip>`
+PIDs are saved to `logs/<id>.pid` and hosts to `logs/<id>.host`.
 
 ---
 
-## Cloud Deploy (Arbitrarily Distribute Projects Across Providers)
+## Cloud Deploy
 
-Any or all of the three demo projects can be deployed to a cloud VM instead of running locally. The portfolio itself always runs locally.
+Any or all projects can be deployed to cloud VMs. Projects not in `cloud.json` run locally as usual.
+
+### Prerequisites (Cloud Only)
+
+Ansible is required for all cloud VM deployments:
+
+```bash
+# macOS
+brew install ansible
+
+# Linux
+pip install ansible
+```
+
+Install the required Ansible collection:
+
+```bash
+ansible-galaxy collection install -r ansible/requirements.yml
+```
+
+Also install the CLI for whichever cloud provider(s) you are using. See the provider-specific guides:
+- [AWS.md](AWS.md)
+- [Azure.md](Azure.md)
+- [GCP.md](GCP.md)
+- [OCI.md](OCI.md)
 
 ### Step 1 — Create `cloud.json`
-
-Copy the template and fill in real values:
 
 ```bash
 cp cloud.json.template cloud.json
 ```
 
-`cloud.json` is gitignored and never committed. It contains paths to your auth credential files. Only include entries for the projects you want cloud-hosted; omit an entry to keep that project local.
+`cloud.json` is gitignored and never committed. Include only the projects you want cloud-hosted; omit an entry to keep that project local.
+
+#### Project IDs
+
+The key in `cloud.json` **must exactly match** the project ID used by the deploy script. The valid IDs are:
+
+| ID | Project |
+|---|---|
+| `flowers` | Flowers (Ruby on Rails) |
+| `labyrinth` | Labyrinth (Node.js) |
+| `fishing` | Fishing Game (Go/WASM) |
+| `portfolio` | Portfolio (Next.js) |
 
 #### Schema
 
 ```json
 {
   "<project-id>": {
-    "repoUrl":  "GitHub URL (may point to a subdirectory via /tree/branch/subdir)",
-    "type":     "rails | node | wasm",
-    "port":     <port number>,
-    "provider": "aws | azure | gcp",
-    "region":   "<provider region string>",
-    "authKey":  "/absolute/path/to/credentials/file"
+    "repoUrl":        "GitHub URL (may include /tree/branch/subdir for a subdirectory)",
+    "type":           "rails | node | wasm | nextjs",
+    "port":           3001,
+    "provider":       "aws | azure | gcp | oci",
+    "region":         "<provider region string>",
+    "authKey":        "./path/to/credentials.json",
+
+    "bucket":         "bucket-name (wasm only — triggers object storage instead of VM)",
+    "storageAccount": "globally-unique-name (Azure wasm only, ≤24 chars, lowercase)",
+    "dnsLabel":       "my-label (Azure only — gives HTTPS via <label>.<region>.cloudapp.azure.com)",
+    "vmSize":         "Standard_DS1_v2 (Azure only — defaults to Standard_DS1_v2)"
   }
 }
 ```
 
-#### Project IDs
+The `port` field is ignored for wasm projects deployed to object storage.
 
-| ID | Project |
-|---|---|
-| `flowers` | Flowers (Rails) |
-| `labyrinth` | Labyrinth (Node.js) |
-| `fishing` | Fishing Game (WASM) |
+#### Wasm Object Storage (No VM Required)
 
-### Step 2 — Prepare Provider Credentials
+For `type: "wasm"` projects, adding a `bucket` field deploys the files to cloud object storage instead of a VM — no server to maintain, no SSH needed:
 
-#### AWS
-`authKey` is the path to an AWS credentials file in the standard INI format:
-
-```ini
-[default]
-aws_access_key_id     = AKIAIOSFODNN7EXAMPLE
-aws_secret_access_key = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-```
-
-The AWS CLI must be installed: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
-
-The deploy script will:
-- Import `~/.ssh/portfolio_deploy.pub` as a key pair named `portfolio-deploy`
-- Create a security group opening SSH (22) and the app port
-- Launch a `t2.micro` Ubuntu 22.04 instance tagged `portfolio-<id>`
-
-#### Azure
-`authKey` is the path to a service principal JSON file created with:
-
-```bash
-az ad sp create-for-rbac --name "portfolio-deploy" --sdk-auth > azure-sp.json
-```
-
-The Azure CLI must be installed: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli
-
-The deploy script will:
-- Create a resource group named `portfolio-rg` in your specified region
-- Launch a `Standard_B1s` Ubuntu 22.04 VM named `portfolio-<id>`
-- Open the app port with `az vm open-port`
-
-#### GCP
-`authKey` is the path to a service account key JSON file downloaded from the GCP Console (IAM → Service Accounts → Keys). The service account needs `Compute Admin` and `Service Account User` roles.
-
-The `gcloud` CLI must be installed: https://cloud.google.com/sdk/docs/install
-
-The project ID is read automatically from the key file. The deploy script will:
-- Create a firewall rule `portfolio-app` allowing the app port
-- Launch an `e2-micro` Ubuntu 22.04 instance named `portfolio-<id>`
-
-#### Oracle Cloud (OCI)
-OCI requires two things that cannot be derived from a single credentials file: a **compartment OCID** and a **subnet OCID**. For this reason, `authKey` points to a small JSON file you create that bundles all OCI-specific config together:
-
-```json
-{
-  "configFile":    "/home/you/.oci/config",
-  "profile":       "DEFAULT",
-  "compartmentId": "ocid1.compartment.oc1...<your-compartment-ocid>",
-  "subnetId":      "ocid1.subnet.oc1...<your-subnet-ocid>"
-}
-```
-
-Save this file anywhere (e.g. `~/oci-portfolio-auth.json`) and set `authKey` to its path.
-
-**One-time manual prerequisite — open the app port in your subnet's security list:**
-Unlike AWS/Azure/GCP, OCI does not support adding individual firewall rules via a single CLI call without replacing the full list. Open the app port once in the OCI Console before deploying:
-1. Go to **Networking → Virtual Cloud Networks → your VCN → Security Lists**
-2. Add an Ingress Rule: Source `0.0.0.0/0`, Protocol TCP, Destination Port = the port for this project
-
-The `oci` CLI must be installed: https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm
-
-Configure it with `oci setup config` and verify with `oci iam user get --user-id <your-user-ocid>`.
-
-The deploy script will:
-- Resolve the latest Ubuntu 22.04 image in your region automatically
-- Launch a `VM.Standard.E2.1.Micro` instance (Always Free eligible) named `portfolio-<id>`
-- Inject `~/.ssh/portfolio_deploy.pub` as the authorized SSH key at launch
-
-**`cloud.json` entry for OCI:**
 ```json
 "fishing": {
   "repoUrl":  "https://github.com/Siderskini/LearningGo/tree/main/fishing/web",
   "type":     "wasm",
-  "port":     8080,
   "provider": "oci",
   "region":   "us-ashburn-1",
-  "authKey":  "/home/you/oci-portfolio-auth.json"
+  "authKey":  "./oci-credentials.json",
+  "bucket":   "bucket-portfolio"
 }
 ```
 
-Common OCI regions: `us-ashburn-1`, `us-phoenix-1`, `uk-london-1`, `eu-frankfurt-1`, `ap-tokyo-1`.
+The deploy script clones the repo locally, uploads all files to the bucket with correct Content-Types, and writes the public URL to `.env.local`. Bucket is created automatically if it doesn't exist.
 
-### Step 3 — Run
+To force VM hosting for a wasm project that has a `bucket` configured:
+```bash
+./deploy.sh --cloud cloud.json --vm
+```
+
+### Step 2 — Deploy
 
 ```bash
 ./deploy.sh --cloud cloud.json
 ```
 
-For each project in `cloud.json`, the script:
-1. Provisions a VM on the specified provider (creates once, reuses on subsequent runs — VMs are identified by name tag)
-2. Generates `~/.ssh/portfolio_deploy` (RSA 4096) if it doesn't exist and imports it to the provider
-3. SSHes in and runs the appropriate setup script:
-   - **rails**: installs rbenv + Ruby 3.2.3 + Bundler, clones repo, runs migrations and seeds, starts Rails in production mode
-   - **node**: installs nvm + Node LTS, clones repo, generates SSL certs, patches hardcoded IP to the VM's public IP, starts with `node index.js`
-   - **wasm**: installs Python 3, clones repo, starts `python3 -m http.server`
-4. Writes the live URL to `.env.local` (e.g. `FLOWERS_URL=http://1.2.3.4:3001`)
-5. Starts the portfolio locally — it reads `.env.local` at startup and links to the cloud URLs instead of localhost
+For each VM-hosted project, the script:
+1. Provisions a VM (creates once, reuses/restarts on subsequent runs — VMs are identified by name)
+2. Generates `~/.ssh/portfolio_deploy` (RSA 4096) if it doesn't exist and syncs it to the provider
+3. Waits for SSH to become available
+4. Runs an Ansible playbook that installs the runtime (Ruby/Node), clones the repo, and starts the app as a systemd service
+5. Installs Caddy and obtains a trusted HTTPS certificate (sslip.io on AWS/GCP/OCI; Azure DNS label on Azure)
+6. Writes the live URL to `.env.local`
 
-Projects not listed in `cloud.json` are deployed locally as usual.
+For wasm object storage projects, steps 1–5 are skipped entirely.
 
----
+### Cloud Logs
 
-## Hosting the Portfolio on Azure with HTTPS
-
-The portfolio itself can be cloud-deployed to an Azure VM with a trusted HTTPS certificate using an Azure DNS label and Caddy as a reverse proxy — no domain purchase required.
-
-### How It Works
-
-Azure assigns a free, stable DNS hostname to any public IP: `<label>.<region>.cloudapp.azure.com`. Caddy listens on ports 80/443, automatically obtains a Let's Encrypt certificate for that hostname, and reverse-proxies to the Next.js process on its internal port.
-
-### Step 1 — Add a `portfolio` entry to `cloud.json`
-
-```json
-"portfolio": {
-  "repoUrl": "https://github.com/Siderskini/Portfolio",
-  "type": "nextjs",
-  "port": 3000,
-  "provider": "azure",
-  "region": "westus2",
-  "authKey": "/path/to/azure-service-principal.json",
-  "dnsLabel": "sidd-portfolio"
-}
-```
-
-The resulting HTTPS URL will be `https://sidd-portfolio.westus2.cloudapp.azure.com`.
-
-### Step 2 — Make sure the repo is public
-
-The Azure VM clones the portfolio repo directly from GitHub. The repo must be publicly accessible.
-
-### Step 3 — Deploy
+Cloud VM services log to the system journal. To follow logs on a running VM:
 
 ```bash
-./deploy.sh --cloud cloud.json
+ssh -i ~/.ssh/portfolio_deploy ubuntu@<ip>   # (use 'opc' for OCI)
+
+# Follow live logs
+journalctl -u flowers -f
+journalctl -u portfolio -f
+
+# Recent history
+journalctl -u flowers --since "1 hour ago"
+
+# Check disk usage
+journalctl --disk-usage
 ```
 
-The script will:
-1. Create the Azure resource group and VM (`portfolio-portfolio`) in westus2
-2. Assign the DNS label `sidd-portfolio` to its public IP
-3. Open ports 80 and 443 on the VM
-4. SSH in and run: `npm install && npm run build && npm start` on port 3000
-5. SSH in and install Caddy, write `/etc/caddy/Caddyfile` pointing to localhost:3000
-6. Caddy obtains a Let's Encrypt cert for `sidd-portfolio.westus2.cloudapp.azure.com` automatically
-
-### Notes
-
-- **DNS label uniqueness**: Azure DNS labels must be unique within a region across all Azure customers. `sidd-portfolio` is used here; if it's taken, choose a different label.
-- **Port 80 must be reachable**: Let's Encrypt's HTTP-01 challenge requires port 80 open. The deploy script opens it automatically.
-- **Refreshing**: `./deploy.sh --cloud cloud.json --refresh portfolio` SSHes in, runs `git pull`, rebuilds, and restarts Next.js. Caddy is not reinstalled.
-- **VM naming**: The Azure VM is named `portfolio-portfolio`. Re-running deploy never creates a duplicate — it reuses the existing VM.
+> Logs are bounded by systemd-journald's automatic rotation — they will never fill the disk.
 
 ---
 
@@ -259,12 +198,14 @@ Pull the latest code and restart a single project without touching anything else
 # Local project
 ./deploy.sh --refresh flowers
 
-# Cloud project
+# Cloud VM project
 ./deploy.sh --cloud cloud.json --refresh labyrinth
+
+# Cloud wasm (re-uploads to object storage)
+./deploy.sh --cloud cloud.json --refresh fishing
 ```
 
-For **local** projects: kills the running process by PID and restarts it.
-For **cloud** projects: SSHes into the existing VM, runs `git pull`, and restarts the process in place. The VM is not reprovisioned.
+For cloud VM projects: runs `git pull` and restarts the service. The VM is not reprovisioned and Caddy is not reinstalled.
 
 ---
 
@@ -273,25 +214,27 @@ For **cloud** projects: SSHes into the existing VM, runs `git pull`, and restart
 When a project is cloud-deployed, its URL is written to `.env.local`:
 
 ```
-FLOWERS_URL=http://1.2.3.4:3001
-LABYRINTH_URL=https://5.6.7.8:4000
-FISHING_URL=http://9.10.11.12:8080
+FLOWERS_URL=https://1-2-3-4.sslip.io
+LABYRINTH_URL=https://5-6-7-8.sslip.io
+FISHING_URL=https://objectstorage.us-ashburn-1.oraclecloud.com/n/.../o/index.html
 ```
 
-`src/lib/projects.ts` reads these at server startup with `process.env.FLOWERS_URL ?? "http://localhost:3001"` etc. The portfolio's "Launch Demo" buttons automatically link to the cloud instance. Restart the portfolio after any URL change to pick up the new `.env.local`.
+`src/lib/projects.ts` reads these at server startup with `process.env.FLOWERS_URL ?? "http://localhost:3001"` etc. The "Launch Demo" buttons automatically link to cloud instances.
+
+If the portfolio is cloud-deployed on Azure, the deploy script automatically syncs `.env.local` to the portfolio VM and restarts it — no manual action needed.
 
 ---
 
 ## VM Naming Reference
 
-VMs are named `portfolio-<id>` and looked up by that name on each deploy run, so re-running the script never creates duplicate VMs.
+VMs are named `portfolio-<id>` and reused by name on every deploy run.
 
-| Project | AWS tag | Azure VM name | GCP instance name | OCI display name |
-|---|---|---|---|---|
-| Portfolio | — | `portfolio-portfolio` | — | — |
-| Flowers | `portfolio-flowers` | `portfolio-flowers` | `portfolio-flowers` | `portfolio-flowers` |
-| Labyrinth | `portfolio-labyrinth` | `portfolio-labyrinth` | `portfolio-labyrinth` | `portfolio-labyrinth` |
-| Fishing | `portfolio-fishing` | `portfolio-fishing` | `portfolio-fishing` | `portfolio-fishing` |
+| Project | AWS / GCP / OCI name | Azure VM name |
+|---|---|---|
+| Portfolio | — | `portfolio-portfolio` |
+| Flowers | `portfolio-flowers` | `portfolio-flowers` |
+| Labyrinth | `portfolio-labyrinth` | `portfolio-labyrinth` |
+| Fishing | `portfolio-fishing` | `portfolio-fishing` |
 
 ---
 
@@ -302,21 +245,24 @@ VMs are named `portfolio-<id>` and looked up by that name on each deploy run, so
 | `deploy.sh` | Main deploy/refresh script |
 | `cloud.json.template` | Template for cloud config — copy to `cloud.json` and fill in |
 | `cloud.json` | Your cloud config — **gitignored, never commit** |
-| `logs/<id>.log` | stdout/stderr of each running service |
+| `ansible/` | Ansible playbooks and roles used for VM setup |
+| `logs/<id>.log` | stdout/stderr of each local service |
 | `logs/<id>.pid` | PID of each local process (used by `--refresh`) |
 | `logs/<id>.host` | Recorded URL of each service (used by `--refresh` for cloud) |
 | `.env.local` | Cloud URLs written here by deploy script — read by Next.js at startup |
-| `projects/` | Cloned project repos — gitignored |
+| `projects/` | Cloned project repos (local deploy only) — gitignored |
+| `.rbenv/` | Project-local Ruby environment — gitignored |
+| `.nvm/` | Project-local Node.js environment — gitignored |
 
 ---
 
 ## Troubleshooting
 
-**Bundler permission error on Flowers**
-The script uses `/usr/bin/bundle3.3` and installs gems into `vendor/bundle` to avoid needing root. If you see a different bundler path, confirm the binary exists: `ls /usr/bin/bundle*`
+**First local deploy is slow**
+The first run compiles Ruby from source via rbenv (5–10 minutes). Subsequent runs reuse the compiled binary and are fast.
 
-**"Required file not found" when running bundle**
-The shebang in `/usr/local/bin/bundle` points to `ruby3.2`, which may not exist. The deploy script strips `/usr/local/bin` from PATH to avoid this and uses `/usr/bin/bundle3.3` directly.
+**Ruby build fails on macOS (`cannot load such file -- zlib`)**
+Homebrew must be installed so the build can link against its openssl/zlib/readline. Run `brew install openssl zlib readline` and retry.
 
 **Labyrinth "refused to connect" or cert warning in browser**
 Labyrinth runs on HTTPS with a self-signed certificate. Before clicking "Launch Demo" in the portfolio, navigate directly to `https://localhost:4000` and accept the browser's security warning once.
@@ -324,14 +270,22 @@ Labyrinth runs on HTTPS with a self-signed certificate. Before clicking "Launch 
 **Portfolio still shows localhost URLs after a cloud deploy**
 The portfolio reads `.env.local` at process startup. After `deploy.sh --cloud cloud.json` writes new URLs, restart the portfolio: `./deploy.sh --refresh portfolio`
 
-**Cloud VM exists but app is not running**
-The VM was provisioned but the app process may have died. Re-run the app setup without reprovisioning: `./deploy.sh --cloud cloud.json --refresh <id>`
+**`ansible-playbook: command not found`**
+Install Ansible: `brew install ansible` (macOS) or `pip install ansible` (Linux), then install the collection: `ansible-galaxy collection install -r ansible/requirements.yml`.
 
-**SSH connection refused on first cloud deploy**
-The VM may need more time to boot. The script waits 15–20 seconds after instance creation, but slow regions may need longer. Re-run `--refresh <id>` once the VM is fully up.
+**Cloud VM exists but app is not running**
+The VM was provisioned but the Ansible run may have failed partway through. Re-run: `./deploy.sh --cloud cloud.json --refresh <id>`
+
+**SSH times out on first cloud deploy**
+The VM may still be booting. The script waits for SSH readiness, but slow regions can take longer. Re-run `--refresh <id>` once the VM is up.
+
+**SSH "Permission denied (publickey)"**
+The SSH key registered with the provider doesn't match your local `~/.ssh/portfolio_deploy`. For AWS, the script now deletes and re-imports the key pair on every deploy. For Azure, it runs `az vm user update` on existing VMs. To fix an existing VM manually:
+- **AWS:** `aws ec2 delete-key-pair --key-name portfolio-deploy --region <region>` then redeploy
+- **Azure:** `az vm user update --resource-group portfolio-rg --name portfolio-<id> --username ubuntu --ssh-key-value "$(cat ~/.ssh/portfolio_deploy.pub)"`
 
 **OCI: app is unreachable after deploy**
-The `VM.Standard.E2.1.Micro` instance was created but the port is blocked. OCI does not allow the deploy script to add individual ingress rules without replacing the entire security list. Open the port manually in the OCI Console under **Networking → Virtual Cloud Networks → your VCN → Security Lists** (see the OCI section above).
+OCI security list rules must be opened manually before deploying. See [OCI.md](OCI.md) Step 5.
 
 **OCI: `compartmentId` or `subnetId` not found**
-The OCI `authKey` JSON must include both `compartmentId` and `subnetId`. Find your compartment OCID in the OCI Console under **Identity → Compartments** and your subnet OCID under **Networking → Virtual Cloud Networks → your VCN → Subnets**.
+These fields are required in your `oci-credentials.json`. For wasm object storage deployments, `subnetId` is not needed. See [OCI.md](OCI.md).

@@ -2,16 +2,18 @@
 - name: Clone portfolio repo
   ansible.builtin.git:
     repo: "{{ clone_url }}"
-    dest: "{{ ansible_env.HOME }}/app"
+    dest: "{{ ansible_facts['env']['HOME'] }}/app"
     version: "{{ branch }}"
     accept_hostkey: true
     update: false
   when: not (refresh_only | default(false))
 
 - name: Pull latest (refresh)
-  ansible.builtin.shell: git pull -q
+  ansible.builtin.shell: |
+    git reset --hard HEAD
+    git pull -q
   args:
-    chdir: "{{ ansible_env.HOME }}/app"
+    chdir: "{{ ansible_facts['env']['HOME'] }}/app"
     executable: /bin/bash
   when: refresh_only | default(false)
   changed_when: true
@@ -39,13 +41,13 @@
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
     npm install --silent
   args:
-    chdir: "{{ ansible_env.HOME }}/app"
+    chdir: "{{ ansible_facts['env']['HOME'] }}/app"
     executable: /bin/bash
   changed_when: true
 
 - name: Create logs directory
   ansible.builtin.file:
-    path: "{{ ansible_env.HOME }}/app/logs"
+    path: "{{ ansible_facts['env']['HOME'] }}/app/logs"
     state: directory
     mode: '0755'
 
