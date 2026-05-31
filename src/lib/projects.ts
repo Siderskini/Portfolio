@@ -18,7 +18,7 @@ export const projects: Project[] = [
       "A flower breeding genetics simulator built with Ruby on Rails. I built this for myself to help strategize for a blue rose in animal crossing for the switch. Original React+Flask project by me, adapted to Ruby on Rails by AI. Hosted on a Google cloud instance.",
     iframeUrl: process.env.FLOWERS_URL ?? "http://localhost:3001",
     repoUrl: "https://github.com/Siderskini/RubyOnRails/tree/main/Flowers",
-    tags: ["Ruby on Rails", "SQLite", "Genetics"],
+    tags: ["Ruby on Rails", "SQLite", "Data Processing"],
   },
   {
     id: "labyrinth",
