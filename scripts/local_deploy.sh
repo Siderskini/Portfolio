@@ -13,6 +13,22 @@ NVM_LOCAL="$SCRIPT_DIR/.nvm"       # Node  — used by Labyrinth and Portfolio
 # ----------------------------------------------------------
 
 setup_rbenv_local() {
+    # On Debian/Ubuntu, check that the required dev headers are installed before
+    # compiling Ruby from source. Missing headers produce a Ruby silently lacking
+    # extensions (fiddle, psych, readline, zlib) with no clear error message.
+    if command -v dpkg &>/dev/null; then
+        local required_pkgs=(libssl-dev zlib1g-dev libreadline-dev libyaml-dev libffi-dev)
+        local missing=()
+        for pkg in "${required_pkgs[@]}"; do
+            dpkg -l "$pkg" 2>/dev/null | grep -q "^ii" || missing+=("$pkg")
+        done
+        if [ ${#missing[@]} -gt 0 ]; then
+            err "Missing system packages required to compile Ruby: ${missing[*]}
+  Install them with:
+    sudo apt install ${missing[*]}"
+        fi
+    fi
+
     if [ ! -d "$RBENV_LOCAL" ]; then
         log "Installing project-local rbenv..."
         git clone -q --depth 1 https://github.com/rbenv/rbenv.git "$RBENV_LOCAL"

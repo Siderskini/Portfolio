@@ -25,6 +25,7 @@ This portfolio and its three live project demos can run entirely on one local ma
 | `python3` | Fishing Game | Included on most systems |
 | `curl` | Node/Ruby install | System package |
 | Build tools (`make`, `gcc`) | Flowers (Ruby compile) | `xcode-select --install` on macOS; `apt install build-essential` on Debian |
+| Ruby dev headers | Flowers (Ruby compile) | Debian/Ubuntu only: `sudo apt install libssl-dev zlib1g-dev libreadline-dev libyaml-dev libffi-dev` |
 | Homebrew | macOS Ruby build | Needed to link openssl/zlib/readline for Ruby compilation |
 
 No global Ruby or Node installation is required. The deploy script sets up project-local runtimes automatically:
