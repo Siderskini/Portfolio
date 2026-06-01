@@ -10,6 +10,42 @@ err()  { echo -e "${RED}[deploy]${NC} $1" >&2; exit 1; }
 # ----------------------------------------------------------
 # Cloud config helpers (python3 for JSON parsing)
 # ----------------------------------------------------------
+validate_cloud_config() {
+    local error
+    if ! error=$(python3 -c '
+import json, sys
+
+REQUIRED = ["repoUrl", "type", "provider", "region", "authKey"]
+VALID_TYPES = {"rails", "node", "wasm", "nextjs"}
+VALID_PROVIDERS = {"aws", "azure", "gcp", "oci"}
+
+try:
+    with open(sys.argv[1], encoding="utf-8-sig") as f:
+        data = json.load(f)
+except json.JSONDecodeError as e:
+    print("Invalid JSON: " + str(e))
+    sys.exit(1)
+
+for pid, cfg in data.items():
+    for field in REQUIRED:
+        if field not in cfg:
+            print("Project " + repr(pid) + " is missing required field: " + repr(field))
+            sys.exit(1)
+    t = cfg["type"]
+    if t not in VALID_TYPES:
+        print("Project " + repr(pid) + " has invalid type " + repr(t) +
+              ". Valid types: " + str(sorted(VALID_TYPES)))
+        sys.exit(1)
+    p = cfg["provider"]
+    if p not in VALID_PROVIDERS:
+        print("Project " + repr(pid) + " has invalid provider " + repr(p) +
+              ". Valid providers: " + str(sorted(VALID_PROVIDERS)))
+        sys.exit(1)
+' "$CLOUD_CONFIG" 2>&1); then
+        err "cloud.json validation failed: $error"
+    fi
+}
+
 cloud_get() {
     local id="$1" field="$2"
     if [ -z "$CLOUD_CONFIG" ] || [ ! -f "$CLOUD_CONFIG" ]; then

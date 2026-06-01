@@ -30,8 +30,8 @@
 
 - name: Pull latest (refresh)
   ansible.builtin.shell: |
-    git reset --hard HEAD
-    git pull -q
+    git fetch origin
+    git reset --hard origin/{{ branch }}
   args:
     chdir: "{{ ansible_facts['env']['HOME'] }}/app"
     executable: /bin/bash

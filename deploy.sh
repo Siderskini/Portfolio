@@ -79,6 +79,8 @@ done
 
 mkdir -p "$PROJECTS_DIR" "$LOG_DIR"
 
+[ -n "$CLOUD_CONFIG" ] && validate_cloud_config
+
 if ! command -v ansible-playbook &>/dev/null; then
     warn "ansible-playbook not found — cloud VM deploys will fail. Install: pip install ansible && ansible-galaxy collection install -r ansible/requirements.yml"
 fi
