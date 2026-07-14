@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sidd Viswanathan | Agentic Game Developer",
+  title: "Sidd Viswanathan | Agentic Software Developer",
   description: "Portfolio of Sidd Viswanathan — Senior Software Engineer and Agentic Game Developer",
 };
 
