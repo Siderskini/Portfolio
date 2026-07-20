@@ -13,7 +13,7 @@ const links = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/sidd-viswanathan-583a9779/",
+    href: "https://www.linkedin.com/in/siddharth-viswanathan-583a9779/",
     description: "Connect professionally",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
